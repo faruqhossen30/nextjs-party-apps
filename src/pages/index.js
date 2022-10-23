@@ -10,7 +10,7 @@ export default function Home() {
     return (
         <AppLayout>
             <Head>
-                <title>Party Insider</title>
+                <title>Party Insider Application</title>
             </Head>
             <HomePage />
         </AppLayout>
