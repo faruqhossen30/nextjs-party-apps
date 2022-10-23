@@ -11,7 +11,7 @@ import { Fragment, useEffect, useRef, useState } from 'react'
 export default function Navnew() {
     return (
         <>
-            <div className="bg-purple-800 py-2">
+            <div className="bg-emerald-800 py-2">
                 <section className="container mx-auto">
                     <div className=" grid grid-cols-12 items-center">
                         <div className="w-full col-span-2 sm:col-span-3 md:col-span-6 lg:col-span-6">
@@ -53,7 +53,7 @@ export default function Navnew() {
                                 <li>
                                     <a href="#" className="text-white relative">
                                         <EnvelopeIcon className="h-6 w-6" />
-                                        <span className="absolute -top-4 -right-3 animate-pulse font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                                        <span className="absolute -top-4 -right-3 animate-pulse font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-emerald-400 to-pink-600">
                                             2
                                         </span>
                                     </a>
@@ -61,7 +61,7 @@ export default function Navnew() {
                                 <li>
                                     <a href="#" className="text-white relative">
                                         <BellAlertIcon className="h-6 w-6" />
-                                        <span className="absolute -top-4 -right-3 animate-pulse font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                                        <span className="absolute -top-4 -right-3 animate-pulse font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-emerald-400 to-pink-600">
                                             2
                                         </span>
                                     </a>
