@@ -2,13 +2,14 @@
 import { useAuth } from '@/hooks/auth'
 import 'bootstrap/dist/css/bootstrap.css'
 // import 'bootstrap/dist/js/bootstrap.bundle'
-import { FaBars, FaHome, FaListAlt, FaMap, FaRegBell, FaRegUserCircle, FaSearch, FaUser, FaUsers } from "react-icons/fa";
+import { FaBars, FaHome, FaListAlt, FaMap, FaPowerOff, FaRegBell, FaRegUserCircle, FaSearch, FaUser, FaUsers } from "react-icons/fa";
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Badge } from 'react-bootstrap';
 import { useState } from 'react';
 
 const AdminLayout = ({ header, children }) => {
     const { user } = useAuth({ middleware: 'auth' })
+    const { logout } = useAuth()
 
     const [show, setShow] = useState( false);
 
@@ -79,6 +80,12 @@ const AdminLayout = ({ header, children }) => {
                             <a href="#" className='flex items-center px-2 text-body'>
                                 <FaMap />
                                 <span className='pl-2 '>Location</span>
+                            </a>
+                        </li>
+                        <li onClick={logout}>
+                            <a href="#" className='flex items-center px-2 text-body'>
+                                <FaPowerOff />
+                                <span className='pl-2 '>Logout</span>
                             </a>
                         </li>
                     </ul>
@@ -154,14 +161,13 @@ const AdminLayout = ({ header, children }) => {
                                     </div>
                                 </Dropdown.Item>
                                 <Dropdown.Item href="#/action-1" className='py-0 px-2'>
-                                    <div className='flex items-center'>
-                                        <FaRegUserCircle className='h-8' />
+                                    <div className='flex items-center' onClick={logout}>
+                                        <FaPowerOff className='h-8' />
                                         <div className='fs-10 p-2'>
-                                            <p className='text-sm p-0 m-0'>Profile</p>
+                                            <p className='text-sm p-0 m-0'>Logout</p>
                                         </div>
                                     </div>
                                 </Dropdown.Item>
-
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
