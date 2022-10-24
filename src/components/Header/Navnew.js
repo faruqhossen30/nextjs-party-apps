@@ -7,14 +7,15 @@ import {
 } from '@heroicons/react/24/outline'
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useRef, useState } from 'react'
+import { FaBell, FaEnvelopeOpen, FaHome, FaUserCircle } from 'react-icons/fa'
 
 export default function Navnew() {
     return (
         <>
-            <div className="bg-emerald-800 py-2">
-                <section className="container mx-auto">
+            <div className="bg-emerald-800 py-1 px-2">
+                <section className="mx-auto">
                     <div className=" grid grid-cols-12 items-center">
-                        <div className="w-full col-span-2 sm:col-span-3 md:col-span-6 lg:col-span-6">
+                        <div className="w-full col-span-2 sm:col-span-3 md:col-span-7 lg:col-span-6">
                             <div className="flex items-center flex-grow">
                                 <img
                                     src="https://www.catalystswings.com/public/img/2.png"
@@ -38,30 +39,30 @@ export default function Navnew() {
                                 </button>
                             </div>
                         </div>
-                        <div className="w-full col-span-10 sm:col-span-9 md:col-span-6 lg:col-span-6">
-                            <ul className="flex items-center justify-end gap-4 sm:gap-10 md:gap-8 lg:gap-10">
+                        <div className="w-full col-span-10 sm:col-span-9 md:col-span-5 lg:col-span-6">
+                            <ul className="flex items-center justify-evenly gap-1 sm:gap-10 md:gap-8 lg:gap-10 m-0">
                                 <li>
                                     <a href="#" className="text-white">
-                                        <HomeIcon className="h-6 w-6 " />{' '}
+                                        <FaHome className="h-6 w-6 " />{' '}
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" className="text-lg text-white">
-                                        <UserIcon className="h-6 w-6" />{' '}
+                                        <FaUserCircle className="h-6 w-6" />{' '}
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" className="text-white relative">
-                                        <EnvelopeIcon className="h-6 w-6" />
-                                        <span className="absolute -top-4 -right-3 animate-pulse font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-emerald-400 to-pink-600">
+                                        <FaEnvelopeOpen className="h-6 w-6" />
+                                        <span className="absolute -top-4 -right-3 animate-pulse font-extrabold  bg-clip-text bg-gradient-to-r from-emerald-400 to-pink-600">
                                             2
                                         </span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" className="text-white relative">
-                                        <BellAlertIcon className="h-6 w-6" />
-                                        <span className="absolute -top-4 -right-3 animate-pulse font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-emerald-400 to-pink-600">
+                                        <FaBell className="h-6 w-6" />
+                                        <span className="absolute -top-4 -right-3 animate-pulse font-extrabold   bg-clip-text bg-gradient-to-r from-emerald-400 to-pink-600">
                                             2
                                         </span>
                                     </a>
@@ -84,7 +85,7 @@ export default function Navnew() {
                                         </fieldset>
                                     </form>
                                 </li>
-                                <li className='z-50'>
+                                <li className="z-50">
                                     <Menu
                                         as="div"
                                         className="relative text-left">

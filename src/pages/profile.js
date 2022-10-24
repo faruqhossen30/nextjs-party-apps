@@ -3,8 +3,15 @@ import React from 'react'
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import HomepageLike from '@/components/HomePage/HomepageLike';
+import HomepageAdvertisement from '@/components/HomePage/HomepageAdvertisement';
+import HomepageSuggestiongroup from '@/components/HomePage/HomepageSuggestiongroup';
+import HomepageCreatepost from '@/components/HomePage/HomepageCreatepost';
+import HomepageStory from '@/components/HomePage/HomepageStory';
+import HomepageSinglefeed from '@/components/HomePage/HomepageSinglefeed';
+import HomepageBirthday from '@/components/HomePage/HomepageBirthday';
+import HomepageFollow from '@/components/HomePage/HomepageFollow';
 
 
 const Profile = () => {
@@ -13,11 +20,12 @@ const Profile = () => {
 
     return (
         <>
+
             <Navnew />
 
             <div className='m-2 px-1'>
 
-                <Tab.Container>
+                <Tab.Container defaultActiveKey="tileline">
                     <div className='bg-white rounded pb-2'>
                         <div className='relative'>
                             <img class="w-full h-48 object-cover rounded" src="https://images.pexels.com/photos/1274260/pexels-photo-1274260.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Flower and sky" />
@@ -25,7 +33,7 @@ const Profile = () => {
                             <div className='ml-4 absolute -bottom-32 flex items-center'>
                                 <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-48 h-48' />
 
-                                <div className='ml-20 pt-6'>
+                                <div className='ml-20 pt-10'>
                                     <h6 className='capitalize text-xl'><strong>najmul hasan</strong></h6>
                                     <h6>Jessore</h6>
                                 </div>
@@ -65,7 +73,7 @@ const Profile = () => {
                                         </Nav.Item>
                                     </div>
                                     <div>
-                                        loremdsfdsfdsfdsfsdfds
+                                        najmul
                                     </div>
                                 </div>
                             </Nav>
@@ -73,7 +81,35 @@ const Profile = () => {
                     </div>
                     <Tab.Content>
                         <Tab.Pane eventKey="tileline">
-                            <div className='mt-4 bg-white rounded p-3'>
+                            <div className='mt-1 rounded'>
+
+                                <div className="grid grid-cols-12 mx-auto">
+                                    <div className="hidden md:block md:col-span-3">
+
+                                        <HomepageLike />
+
+                                        <HomepageAdvertisement />
+
+                                        <HomepageSuggestiongroup />
+
+                                    </div>
+                                    <div className="col-span-12 md:col-span-6 px-1 py-2 rounded">
+
+                                        <HomepageCreatepost />
+
+                                        <HomepageStory />
+
+                                        <HomepageSinglefeed />
+
+                                    </div>
+                                    <div className="hidden md:block md:col-span-3">
+
+                                        <HomepageBirthday />
+
+                                        <HomepageFollow />
+
+                                    </div>
+                                </div>
 
                             </div>
                         </Tab.Pane>
@@ -99,7 +135,7 @@ const Profile = () => {
                                             <span className='text-lg block'><strong>Languages : </strong>najmulcse2@gmail.com</span>
                                         </div>
                                     </div>
-                                    <div className='col-span-12  md:col-span-8 bg-white rounded p-3 ml-2'>
+                                    <div className='col-span-12  md:col-span-8 bg-white rounded p-3 ml-1'>
 
                                         <div>
                                             <h4>About Me!</h4>
@@ -131,10 +167,9 @@ const Profile = () => {
                         <Tab.Pane eventKey="photos">
                             <div className='mt-4  rounded p-3'>
                                 <div>
-                                    <Tab.Container>
+                                    <Tab.Container defaultActiveKey="allPhotos">
                                         <div className='md:flex items-center justify-between flex-grow bg-white rounded p-3'>
                                             <div className='w-full'><strong>Photos</strong> <br /> 100 </div>
-
 
                                             <div className='w-full'>
                                                 <Row className='px-8'>
@@ -163,7 +198,7 @@ const Profile = () => {
                                         </div>
                                         <Tab.Content>
                                             <Tab.Pane eventKey="allPhotos">
-                                                <div className='mt-4 bg-white rounded p-3'>
+                                                <div className='mt-4 bg-white rounded p-2'>
 
                                                     <div className='grid grid-cols-12'>
                                                         <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
@@ -183,7 +218,7 @@ const Profile = () => {
                                                 </div>
                                             </Tab.Pane>
                                             <Tab.Pane eventKey="photos">
-                                                <div className='mt-4 bg-white rounded p-3'>
+                                                <div className='mt-4 bg-white rounded p-2'>
                                                     <div className='grid grid-cols-12'>
                                                         <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
                                                             <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72 ' />
@@ -209,8 +244,20 @@ const Profile = () => {
 
 
                         <Tab.Pane eventKey="videos">
-                            <div className='mt-4 bg-white rounded p-3'>
+                            <div className='mt-4 bg-white rounded p-2'>
                                 <div className='grid grid-cols-12'>
+                                    <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
+                                        <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                    </div>
+                                    <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
+                                        <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                    </div>
+                                    <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
+                                        <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                    </div>
+                                    <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
+                                        <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                    </div>
                                     <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
                                         <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
                                     </div>
