@@ -5,3 +5,17 @@ a{
     text-decoration: none !important;
     color: black !important;
 }
+.form-control:focus{
+    outline: none !important;
+    border-color:#047857 !important;
+    box-shadow: none !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff !important;
+    background-color: #047857 !important;
+}
+.card.text-center {
+    border-radius: inherit;
+    border: none;
+}

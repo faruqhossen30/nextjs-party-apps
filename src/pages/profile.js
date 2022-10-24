@@ -41,11 +41,11 @@ const Profile = () => {
                         </div>
 
                         <div className='relative pt-24 -top-16 flex items-center justify-end gap-8 mr-4'>
-                            <div className='text-center border-r-2 border-indigo-600 pr-6'>
+                            <div className='text-center border-r-2 border-emerald-800 pr-6'>
                                 <h2><strong>22323</strong></h2>
                                 <span>Likes</span>
                             </div>
-                            <div className='text-center border-r-2 border-indigo-600 pr-6'>
+                            <div className='text-center border-r-2 border-emerald-800 pr-6'>
                                 <h2><strong>22323</strong></h2>
                                 <span>Likes</span>
                             </div>

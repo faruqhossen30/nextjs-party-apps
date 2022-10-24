@@ -8,20 +8,25 @@ import {
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { FaBell, FaEnvelopeOpen, FaHome, FaUserCircle } from 'react-icons/fa'
+import Link from 'next/link'
 
 export default function Navnew() {
     return (
         <>
-            <div className="bg-emerald-800 py-1 px-2">
+            <div className="bg-emerald-700 py-1 px-2">
                 <section className="mx-auto">
                     <div className=" grid grid-cols-12 items-center">
                         <div className="w-full col-span-2 sm:col-span-3 md:col-span-7 lg:col-span-6">
                             <div className="flex items-center flex-grow">
-                                <img
-                                    src="https://www.catalystswings.com/public/img/2.png"
-                                    alt=""
-                                    className="mr-10"
-                                />
+                                <Link href="/">
+                                    <a>
+                                        <img
+                                            src="https://www.catalystswings.com/public/img/2.png"
+                                            alt=""
+                                            className="mr-10"
+                                        />
+                                    </a>
+                                </Link>
                                 <div className="hidden md:block w-full">
                                     <div className="rounded-full h-9 bg-white font-sans text-black flex items-center justify-end w-full">
                                         <input
@@ -42,14 +47,18 @@ export default function Navnew() {
                         <div className="w-full col-span-10 sm:col-span-9 md:col-span-5 lg:col-span-6">
                             <ul className="flex items-center justify-evenly gap-1 sm:gap-10 md:gap-8 lg:gap-10 m-0">
                                 <li>
-                                    <a href="#" className="text-white">
-                                        <FaHome className="h-6 w-6 " />{' '}
-                                    </a>
+                                    <Link href="/">
+                                        <a className="text-white">
+                                            <FaHome className="h-6 w-6 " />{' '}
+                                        </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="#" className="text-lg text-white">
-                                        <FaUserCircle className="h-6 w-6" />{' '}
-                                    </a>
+                                    <Link href="/profile">
+                                        <a className="text-lg text-white">
+                                            <FaUserCircle className="h-6 w-6" />{' '}
+                                        </a>
+                                    </Link>
                                 </li>
                                 <li>
                                     <a href="#" className="text-white relative">
@@ -110,24 +119,26 @@ export default function Navnew() {
                                                 <div className="px-1 py-1 ">
                                                     <Menu.Item>
                                                         {({ active }) => (
-                                                            <button
-                                                                className={`${active
-                                                                    ? 'bg-violet-500 text-white'
-                                                                    : 'text-gray-900'
-                                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                                                                {active ? (
-                                                                    <EditActiveIcon
-                                                                        className="mr-2 h-5 w-5"
-                                                                        aria-hidden="true"
-                                                                    />
-                                                                ) : (
-                                                                    <EditInactiveIcon
-                                                                        className="mr-2 h-5 w-5"
-                                                                        aria-hidden="true"
-                                                                    />
-                                                                )}
-                                                                Edit
-                                                            </button>
+                                                            <Link href="/settings">
+                                                                <a
+                                                                    className={`${active
+                                                                        ? 'bg-black text-white'
+                                                                        : 'text-gray-900'
+                                                                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                                                                    {active ? (
+                                                                        <EditActiveIcon
+                                                                            className="mr-2 h-5 w-5"
+                                                                            aria-hidden="true"
+                                                                        />
+                                                                    ) : (
+                                                                        <EditInactiveIcon
+                                                                            className="mr-2 h-5 w-5"
+                                                                            aria-hidden="true"
+                                                                        />
+                                                                    )}
+                                                                    Setting
+                                                                </a>
+                                                            </Link>
                                                         )}
                                                     </Menu.Item>
                                                     <Menu.Item>

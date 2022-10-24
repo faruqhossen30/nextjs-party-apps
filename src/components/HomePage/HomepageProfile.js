@@ -21,11 +21,11 @@ const HomepageProfile = () => {
                 </div>
 
                 <div className='relative pt-24 flex items-center justify-evenly'>
-                    <div className='text-center border-r-2 border-indigo-600 pr-6'>
+                    <div className='text-center border-r-2 border-emerald-700 pr-6'>
                         <h6><strong>22323</strong></h6>
                         <span>Likes</span>
                     </div>
-                    <div className='text-center border-r-2 border-indigo-600 pr-6'>
+                    <div className='text-center border-r-2 border-emerald-700 pr-6'>
                         <h6><strong>22323</strong></h6>
                         <span>Likes</span>
                     </div>
@@ -48,7 +48,7 @@ const HomepageProfile = () => {
                         <a href=""> <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded-full w-10 h-10' /></a>
                         <a href=""> <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded-full w-10 h-10' /></a>
                     </div>
-                    <button className='py-2 mt-4 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75'>View Profile</button>
+                    <button className='py-2 mt-4 px-4 bg-emerald-700 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75'>View Profile</button>
                 </div>
 
             </div>

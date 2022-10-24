@@ -177,7 +177,7 @@ const settings = () => {
                                             </Form.Group>
                                         </div>
                                     </div>
-                                    <Button variant="primary">Submit</Button>{' '}
+                                    <Button variant="primary" className="bg-emerald-700">Submit</Button>{' '}
                                 </Form>
                             </Tab.Pane>
                             <Tab.Pane eventKey="account">
