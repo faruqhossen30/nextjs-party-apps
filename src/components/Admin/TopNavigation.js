@@ -1,5 +1,6 @@
 import { FaPowerOff, FaRegBell, FaRegUserCircle, FaSearch } from 'react-icons/fa';
 import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 import { useAuth } from '@/hooks/auth'
 
 const TopNavigation = () => {
@@ -53,7 +54,7 @@ const TopNavigation = () => {
                     </Dropdown>
                     <Dropdown className='pr-4'>
                         <Dropdown.Toggle variant="" id="dropdown-basic" className='p-0'>
-                            <img className='h-8 rounded-full ring-1' src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="" />
+                            <img className='h-8 rounded-full ring-1' src="/avatar.jpg" alt="" />
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
@@ -73,7 +74,7 @@ const TopNavigation = () => {
                                     </div>
                                 </div>
                             </Dropdown.Item>
-                            <Dropdown.Item href="#/action-1" className='py-0 px-2'>
+                            <Dropdown.Item  as="button" className='py-0 px-2'>
                                 <div className='flex items-center' onClick={logout}>
                                     <FaPowerOff className='h-8' />
                                     <div className='fs-10 p-2'>
