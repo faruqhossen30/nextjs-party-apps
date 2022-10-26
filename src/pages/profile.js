@@ -12,6 +12,7 @@ import HomepageStory from '@/components/HomePage/HomepageStory';
 import HomepageSinglefeed from '@/components/HomePage/HomepageSinglefeed';
 import HomepageBirthday from '@/components/HomePage/HomepageBirthday';
 import HomepageFollow from '@/components/HomePage/HomepageFollow';
+import { FaFacebook, FaTwitterSquare, FaInstagramSquare, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 
 const Profile = () => {
@@ -20,37 +21,36 @@ const Profile = () => {
 
     return (
         <>
-
             <Navnew />
-
             <div className='m-2 px-1'>
-
                 <Tab.Container defaultActiveKey="tileline">
                     <div className='bg-white rounded pb-2'>
                         <div className='relative'>
                             <img class="w-full h-48 object-cover rounded" src="https://images.pexels.com/photos/1274260/pexels-photo-1274260.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Flower and sky" />
 
                             <div className='ml-4 absolute -bottom-32 flex items-center'>
-                                <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-48 h-48' />
+                                <img src="/user.jpg" alt="" className='rounded w-48 h-48' />
 
-                                <div className='ml-20 pt-10'>
-                                    <h6 className='capitalize text-xl'><strong>najmul hasan</strong></h6>
+                                <div className='ml-10 pt-10'>
+                                    <h6 className='capitalize text-2xl'><strong>najmul hasan</strong></h6>
                                     <h6>Jessore</h6>
                                 </div>
                             </div>
                         </div>
 
-                        <div className='relative pt-24 -top-16 flex items-center justify-end gap-8 mr-4'>
-                            <div className='text-center border-r-2 border-indigo-600 pr-6'>
-                                <h2><strong>22323</strong></h2>
+                        {/* <div className='relative md:pt-24 -top-16 flex items-center md:justify-endjustify-start sm:pt-60 sm:pl-4 gap-8 mr-4'> */}
+
+                        <div className='flex items-center relative md:justify-end md:-top-28 md:pr-2 pl-5 pt-36'>
+                            <div className='text-center pr-6'>
+                                <h2 className='text-3xl m-0'><strong>22323</strong></h2>
                                 <span>Likes</span>
                             </div>
-                            <div className='text-center border-r-2 border-indigo-600 pr-6'>
-                                <h2><strong>22323</strong></h2>
+                            <div className='text-center pr-6'>
+                                <h2 className='text-3xl m-0'><strong>22323</strong></h2>
                                 <span>Likes</span>
                             </div>
                             <div className='text-center'>
-                                <h2><strong>22323</strong></h2>
+                                <h2 className='text-3xl m-0'><strong>22323</strong></h2>
                                 <span>Likes</span>
                             </div>
                         </div>
@@ -72,8 +72,19 @@ const Profile = () => {
                                             <Nav.Link eventKey="videos">Videos</Nav.Link>
                                         </Nav.Item>
                                     </div>
-                                    <div>
-                                        najmul
+                                    <div className='flex gap-1 text-2xl'>
+                                        <a href='#'>
+                                            <FaFacebook />
+                                        </a>
+                                        <a href='#'>
+                                            <FaTwitterSquare />
+                                        </a>
+                                        <a href='#'>
+                                            <FaInstagramSquare />
+                                        </a>
+                                        <a href='#'>
+                                            <FaLinkedin />
+                                        </a>
                                     </div>
                                 </div>
                             </Nav>
@@ -168,9 +179,8 @@ const Profile = () => {
                             <div className='mt-4  rounded p-3'>
                                 <div>
                                     <Tab.Container defaultActiveKey="allPhotos">
-                                        <div className='md:flex items-center justify-between flex-grow bg-white rounded p-3'>
+                                        <div className='flex items-center justify-between  flex-grow bg-white rounded p-3'>
                                             <div className='w-full'><strong>Photos</strong> <br /> 100 </div>
-
                                             <div className='w-full'>
                                                 <Row className='px-8'>
                                                     <Nav variant="pills" className="flex-column">
@@ -188,8 +198,6 @@ const Profile = () => {
                                                 </Row>
 
                                             </div>
-
-
                                             <div className='w-full'>
                                                 <input
                                                     type="text"
@@ -202,16 +210,16 @@ const Profile = () => {
 
                                                     <div className='grid grid-cols-12'>
                                                         <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
-                                                            <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72 ' />
+                                                            <img src="/user.jpg" alt="" className='rounded w-full h-72 ' />
                                                         </div>
                                                         <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
-                                                            <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                                            <img src="/user.jpg" alt="" className='rounded w-full h-72' />
                                                         </div>
                                                         <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
-                                                            <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                                            <img src="/user.jpg" alt="" className='rounded w-full h-72' />
                                                         </div>
                                                         <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
-                                                            <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                                            <img src="/user.jpg" alt="" className='rounded w-full h-72' />
                                                         </div>
                                                     </div>
 
@@ -221,16 +229,16 @@ const Profile = () => {
                                                 <div className='mt-4 bg-white rounded p-2'>
                                                     <div className='grid grid-cols-12'>
                                                         <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
-                                                            <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72 ' />
+                                                            <img src="/user.jpg" alt="" className='rounded w-full h-72 ' />
                                                         </div>
                                                         <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
-                                                            <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                                            <img src="/user.jpg" alt="" className='rounded w-full h-72' />
                                                         </div>
                                                         <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
-                                                            <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                                            <img src="/user.jpg" alt="" className='rounded w-full h-72' />
                                                         </div>
                                                         <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
-                                                            <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                                            <img src="/user.jpg" alt="" className='rounded w-full h-72' />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -247,28 +255,28 @@ const Profile = () => {
                             <div className='mt-4 bg-white rounded p-2'>
                                 <div className='grid grid-cols-12'>
                                     <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
-                                        <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                        <img src="/user.jpg" alt="" className='rounded w-full h-72' />
                                     </div>
                                     <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
-                                        <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                        <img src="/user.jpg" alt="" className='rounded w-full h-72' />
                                     </div>
                                     <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
-                                        <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                        <img src="/user.jpg" alt="" className='rounded w-full h-72' />
                                     </div>
                                     <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
-                                        <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                        <img src="/user.jpg" alt="" className='rounded w-full h-72' />
                                     </div>
                                     <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
-                                        <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                        <img src="/user.jpg" alt="" className='rounded w-full h-72' />
                                     </div>
                                     <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
-                                        <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                        <img src="/user.jpg" alt="" className='rounded w-full h-72' />
                                     </div>
                                     <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
-                                        <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                        <img src="/user.jpg" alt="" className='rounded w-full h-72' />
                                     </div>
                                     <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 pr-1 pl-1 pb-2'>
-                                        <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-72' />
+                                        <img src="/user.jpg" alt="" className='rounded w-full h-72' />
                                     </div>
                                 </div>
                             </div>

@@ -23,7 +23,7 @@ const settings = () => {
                     <div className="bg-white rounded py-4 my-4">
                         <Row>
                             <Nav variant="pills" className="flex-column">
-                                <div className="flex justify-center">
+                                <div className="flex flex-wrap justify-center">
                                     <Nav.Item>
                                         <Nav.Link eventKey="profile_information" >
                                             Profile Information
@@ -177,7 +177,7 @@ const settings = () => {
                                             </Form.Group>
                                         </div>
                                     </div>
-                                    <Button variant="primary">Submit</Button>{' '}
+                                    <Button variant="primary" className="bg-emerald-700">Submit</Button>{' '}
                                 </Form>
                             </Tab.Pane>
                             <Tab.Pane eventKey="account">

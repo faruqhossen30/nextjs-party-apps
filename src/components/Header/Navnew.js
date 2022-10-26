@@ -1,34 +1,35 @@
-import {
-    HomeIcon,
-    UserIcon,
-    EnvelopeIcon,
-    BellAlertIcon,
-    MagnifyingGlassIcon,
-} from '@heroicons/react/24/outline'
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { FaBell, FaEnvelopeOpen, FaHome, FaUserCircle } from 'react-icons/fa'
+import Link from 'next/link'
 
 export default function Navnew() {
     return (
         <>
-            <div className="bg-emerald-800 py-1 px-2">
+            <div className="bg-emerald-700 py-2 px-2 sticky top-0 z-50">
                 <section className="mx-auto">
                     <div className=" grid grid-cols-12 items-center">
                         <div className="w-full col-span-2 sm:col-span-3 md:col-span-7 lg:col-span-6">
                             <div className="flex items-center flex-grow">
-                                <img
-                                    src="https://www.catalystswings.com/public/img/2.png"
-                                    alt=""
-                                    className="mr-10"
-                                />
+                                {/* <div> */}
+                                <Link href="/" className="w-10">
+                                    <a className="mr-4">
+                                        <img
+                                            src="/logo.jpg"
+                                            alt=""
+                                            className="h-10 w-10 object-fill"
+                                        />
+                                    </a>
+                                </Link>
+                                {/* </div> */}
                                 <div className="hidden md:block w-full">
                                     <div className="rounded-full h-9 bg-white font-sans text-black flex items-center justify-end w-full">
                                         <input
                                             type="text"
                                             className="h-7 w-full rounded-full border-0 border-transparent focus:border-transparent focus:ring-0"
                                             placeholder="Search..."></input>
-                                        <button className="px-4">
+                                        <button className="px-0 md:px-4">
                                             <MagnifyingGlassIcon className="h-4 pr-1" />{' '}
                                         </button>
                                     </div>
@@ -40,16 +41,20 @@ export default function Navnew() {
                             </div>
                         </div>
                         <div className="w-full col-span-10 sm:col-span-9 md:col-span-5 lg:col-span-6">
-                            <ul className="flex items-center justify-evenly gap-1 sm:gap-10 md:gap-8 lg:gap-10 m-0">
-                                <li>
-                                    <a href="#" className="text-white">
-                                        <FaHome className="h-6 w-6 " />{' '}
-                                    </a>
+                            <ul className="flex items-center justify-content-evenly gap-1 sm:gap-10 md:gap-8 lg:gap-8 m-0">
+                                <li className="hidden md:block">
+                                    <Link href="/">
+                                        <a className="text-white">
+                                            <FaHome className="h-6 w-6 " />{' '}
+                                        </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="#" className="text-lg text-white">
-                                        <FaUserCircle className="h-6 w-6" />{' '}
-                                    </a>
+                                    <Link href="/profile">
+                                        <a className="text-lg text-white">
+                                            <FaUserCircle className="h-6 w-6" />{' '}
+                                        </a>
+                                    </Link>
                                 </li>
                                 <li>
                                     <a href="#" className="text-white relative">
@@ -92,7 +97,7 @@ export default function Navnew() {
                                         <div>
                                             <Menu.Button className=" w-full justify-center rounded-md text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 flex items-center">
                                                 <img
-                                                    src="https://www.catalystswings.com/public/img/2.png"
+                                                    src="/avatar.jpg"
                                                     alt=""
                                                     className="w-10 h-10 ring-1 ring-white rounded-full mr-1"
                                                 />
@@ -110,32 +115,34 @@ export default function Navnew() {
                                                 <div className="px-1 py-1 ">
                                                     <Menu.Item>
                                                         {({ active }) => (
-                                                            <button
-                                                                className={`${active
-                                                                    ? 'bg-violet-500 text-white'
-                                                                    : 'text-gray-900'
-                                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                                                                {active ? (
-                                                                    <EditActiveIcon
-                                                                        className="mr-2 h-5 w-5"
-                                                                        aria-hidden="true"
-                                                                    />
-                                                                ) : (
-                                                                    <EditInactiveIcon
-                                                                        className="mr-2 h-5 w-5"
-                                                                        aria-hidden="true"
-                                                                    />
-                                                                )}
-                                                                Edit
-                                                            </button>
+                                                            <Link href="/settings">
+                                                                <a
+                                                                    className={`${active
+                                                                            ? 'bg-black text-white'
+                                                                            : 'text-gray-900'
+                                                                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                                                                    {active ? (
+                                                                        <EditActiveIcon
+                                                                            className="mr-2 h-5 w-5"
+                                                                            aria-hidden="true"
+                                                                        />
+                                                                    ) : (
+                                                                        <EditInactiveIcon
+                                                                            className="mr-2 h-5 w-5"
+                                                                            aria-hidden="true"
+                                                                        />
+                                                                    )}
+                                                                    Setting
+                                                                </a>
+                                                            </Link>
                                                         )}
                                                     </Menu.Item>
                                                     <Menu.Item>
                                                         {({ active }) => (
                                                             <button
                                                                 className={`${active
-                                                                    ? 'bg-violet-500 text-white'
-                                                                    : 'text-gray-900'
+                                                                        ? 'bg-violet-500 text-white'
+                                                                        : 'text-gray-900'
                                                                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
                                                                 {active ? (
                                                                     <DuplicateActiveIcon
@@ -158,8 +165,8 @@ export default function Navnew() {
                                                         {({ active }) => (
                                                             <button
                                                                 className={`${active
-                                                                    ? 'bg-violet-500 text-white'
-                                                                    : 'text-gray-900'
+                                                                        ? 'bg-violet-500 text-white'
+                                                                        : 'text-gray-900'
                                                                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
                                                                 {active ? (
                                                                     <ArchiveActiveIcon
@@ -180,8 +187,8 @@ export default function Navnew() {
                                                         {({ active }) => (
                                                             <button
                                                                 className={`${active
-                                                                    ? 'bg-violet-500 text-white'
-                                                                    : 'text-gray-900'
+                                                                        ? 'bg-violet-500 text-white'
+                                                                        : 'text-gray-900'
                                                                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
                                                                 {active ? (
                                                                     <MoveActiveIcon
@@ -204,8 +211,8 @@ export default function Navnew() {
                                                         {({ active }) => (
                                                             <button
                                                                 className={`${active
-                                                                    ? 'bg-violet-500 text-white'
-                                                                    : 'text-gray-900'
+                                                                        ? 'bg-violet-500 text-white'
+                                                                        : 'text-gray-900'
                                                                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
                                                                 {active ? (
                                                                     <DeleteActiveIcon

@@ -12,7 +12,7 @@ const HomepageCreatepost = () => {
                     <textarea
                         id="message"
                         rows="4"
-                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        class="block p-2.5 w-full text-sm text-gray-900 border-emerald-700 rounded-lg border border-emerald-700 focus:ring-emerald-500 focus:border-emerald-700"
                         placeholder="Write something here..."></textarea>
                 </div>
                 <div className="flex items-center justify-between py-2 px-3">
@@ -31,7 +31,7 @@ const HomepageCreatepost = () => {
                     <div>
                         <button
                             type="submit"
-                            className="bg-purple-600 text-white font-bold px-3 py-1 rounded-lg">
+                            className="bg-emerald-700 text-white font-bold px-3 py-1 rounded-lg">
                             Post
                         </button>
                     </div>
