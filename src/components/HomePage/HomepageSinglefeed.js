@@ -1,15 +1,12 @@
 import React from 'react'
-import { FaFileVideo, FaThumbsUp, FaShareAlt, FaRegCommentDots } from 'react-icons/fa'
-
+import { FaFileVideo, FaThumbsUp, FaShareAlt, FaRegCommentDots, Fa500Px, FaHome } from 'react-icons/fa'
 const HomepageSinglefeed = () => {
     return (
         <div>
             <div className='my-3 bg-white rounded p-4'>
                 <div className='flex items-center justify-between'>
                     <div className='flex items-center'>
-                        <div>
-                            <a href='#'><img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded-full w-12 h-12' /></a>
-                        </div>
+                        <a href='#'><img src="/user.jpg" alt="" className='rounded-full w-12 h-12' /></a>
                         <div className='ml-2 capitalize'>
                             <a href='#'><h6 className='leading-none'><strong>najmul hasan</strong></h6></a>
                             <span>10 minits ago</span>
@@ -20,8 +17,8 @@ const HomepageSinglefeed = () => {
                     </div>
                 </div>
                 <div>
-                    <p className='py-4 text-justify text-base'>najmul ipsum dolor sit amet consectetur adipisicing elit. Velit assumenda natus harum, illum quaerat praesentium nisi officia, obcaecati in soluta perspiciatis hic nemo aspernatur dicta voluptas exercitationem beatae nulla quisquam nam! Placeat veritatis dicta est, modi provident repellat quidem neque, quo distinctio iusto quaerat? Ducimus officiis inventore voluptate maiores incidunt.</p>
-                    <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded w-full h-96 object-fill' />
+                    <p className='py-2 text-justify text-base'>najmul ipsum dolor sit amet consectetur adipisicing elit. Velit assumenda natus harum, illum quaerat praesentium nisi officia, obcaecati in soluta perspiciatis hic nemo aspernatur dicta voluptas exercitationem beatae nulla quisquam nam! Placeat veritatis dicta est, modi provident repellat quidem neque, quo distinctio iusto quaerat? Ducimus officiis inventore voluptate maiores incidunt.</p>
+                    <img src="/user.jpg" alt="" className='object-contain rounded w-full ' />
                 </div>
                 <div className='mt-4'>
                     <hr />
@@ -41,7 +38,7 @@ const HomepageSinglefeed = () => {
                 <div className='flex pt-6'>
                     <div>
                         <a href='#'>
-                            <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded-full w-60 h-12' />
+                            <img src="/avatar.jpg" alt="" className='object-contain rounded-full h-10 w-60' />
                         </a>
                     </div>
                     <div className='ml-2 capitalize'>
@@ -65,7 +62,7 @@ const HomepageSinglefeed = () => {
                 </div>
 
                 <div className='flex pt-4 relative'>
-                    <img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-10%2Ff717609c-4123-4215-a5a5-104aca30db48%2FPakistan_1.jpg?auto=format%2Ccompress&format=webp&w=640&dpr=1.0" alt="" className='rounded-full w-12 h-12' />
+                    <img src="/user.jpg" alt="" className='rounded-full w-12 h-12' />
                     <textarea
                         id="message"
                         rows="4"

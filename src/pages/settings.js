@@ -23,7 +23,7 @@ const settings = () => {
                     <div className="bg-white rounded py-4 my-4">
                         <Row>
                             <Nav variant="pills" className="flex-column">
-                                <div className="flex justify-center">
+                                <div className="flex flex-wrap justify-center">
                                     <Nav.Item>
                                         <Nav.Link eventKey="profile_information" >
                                             Profile Information

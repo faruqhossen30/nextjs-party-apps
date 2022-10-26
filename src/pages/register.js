@@ -1,88 +1,127 @@
-import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import ApplicationLogo from '@/components/ApplicationLogo'
+import AuthCard from '@/components/AuthCard'
+import Button from '@/components/Button'
+import GuestLayout from '@/components/Layouts/GuestLayout'
+import Input from '@/components/Input'
+import InputError from '@/components/InputError'
+import Label from '@/components/Label'
+import Link from 'next/link'
+import { useAuth } from '@/hooks/auth'
+import { useState } from 'react'
 
-const login = () => {
+const Register = () => {
+    const { register } = useAuth({
+        middleware: 'guest',
+        redirectIfAuthenticated: '/dashboard',
+    })
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [passwordConfirmation, setPasswordConfirmation] = useState('')
+    const [errors, setErrors] = useState([])
+
+    const submitForm = event => {
+        event.preventDefault()
+
+        register({ name, email, password, password_confirmation: passwordConfirmation, setErrors })
+    }
+
     return (
-        <div className="container-fluid bg-white vh-100 flex items-center fluid={sm}">
-            <div className='Row flex justify-center'>
-                <Col md={8} sm={12}>
-                    <Row>
-                        <Col className='p-0 '>
-                            <div className="card text-center">
-                                <div className="card-body shadow-2xl">
-                                    <Form>
-                                        <Row className='p-3'>
-                                            <h2 className='pb-5 font-bold'>Sign Up</h2>
-                                            <Col xs={12}>
-                                                <Form.Group className="mb-3">
-                                                    <Form.Control
-                                                        type="text" className='p-2'
-                                                        placeholder="Full Name"
-                                                    />
-                                                </Form.Group>
-                                            </Col>
-                                            <Col xs={12}>
-                                                <Form.Group className="mb-3">
-                                                    <Form.Control
-                                                        type="email" className='p-2'
-                                                        placeholder="Email Address"
-                                                    />
-                                                </Form.Group>
-                                            </Col>
-                                            <Col xs={12}>
-                                                <Form.Group className="mb-3">
-                                                    <Form.Control
-                                                        type="text" className='p-2'
-                                                        placeholder="Mobile Number"
-                                                    />
-                                                </Form.Group>
-                                            </Col>
-                                            <Col xs={12}>
-                                                <Form.Group className="mb-3">
-                                                    <Form.Control
-                                                        type="password" className='p-2'
-                                                        placeholder="Password"
-                                                    />
-                                                </Form.Group>
-                                            </Col>
-                                            <Col xs={12}>
-                                                <Form.Group className="mb-3">
-                                                    <Form.Control
-                                                        type="password" className='p-2'
-                                                        placeholder="Confirm Password"
-                                                    />
-                                                </Form.Group>
-                                            </Col>
-                                            <Form.Group className="mb-3 text-left" controlId="formBasicCheckbox">
-                                                <Form.Check type="checkbox" label="Check me out" />
-                                            </Form.Group>
-                                            <div className="d-grid gap-2">
-                                                <Button variant="primary" size="lg">
-                                                    SIGN UP
-                                                </Button>
-                                            </div>
-                                        </Row>
-                                    </Form>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col className='p-0 flex items-center bg-emerald-700'>
-                            <div className='p-5 text-white'>
-                                <h4>We are more than just a company</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-                                </p>
-                            </div>
-                        </Col>
-                    </Row>
-                </Col>
-            </div>
-        </div>
+        <GuestLayout>
+            <AuthCard
+                logo={
+                    <Link href="/">
+                        <a>
+                            <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
+                        </a>
+                    </Link>
+                }>
+
+                <form onSubmit={submitForm}>
+                    {/* Name */}
+                    <div>
+                        <Label htmlFor="name">Name</Label>
+
+                        <Input
+                            id="name"
+                            type="text"
+                            value={name}
+                            className="block mt-1 w-full"
+                            onChange={event => setName(event.target.value)}
+                            required
+                            autoFocus
+                        />
+
+                        <InputError messages={errors.name} className="mt-2" />
+                    </div>
+
+                    {/* Email Address */}
+                    <div className="mt-4">
+                        <Label htmlFor="email">Email</Label>
+
+                        <Input
+                            id="email"
+                            type="email"
+                            value={email}
+                            className="block mt-1 w-full"
+                            onChange={event => setEmail(event.target.value)}
+                            required
+                        />
+
+                        <InputError messages={errors.email} className="mt-2" />
+                    </div>
+
+                    {/* Password */}
+                    <div className="mt-4">
+                        <Label htmlFor="password">Password</Label>
+
+                        <Input
+                            id="password"
+                            type="password"
+                            value={password}
+                            className="block mt-1 w-full"
+                            onChange={event => setPassword(event.target.value)}
+                            required
+                            autoComplete="new-password"
+                        />
+
+                        <InputError messages={errors.password} className="mt-2" />
+                    </div>
+
+                    {/* Confirm Password */}
+                    <div className="mt-4">
+                        <Label htmlFor="passwordConfirmation">
+                            Confirm Password
+                        </Label>
+
+                        <Input
+                            id="passwordConfirmation"
+                            type="password"
+                            value={passwordConfirmation}
+                            className="block mt-1 w-full"
+                            onChange={event =>
+                                setPasswordConfirmation(event.target.value)
+                            }
+                            required
+                        />
+
+                        <InputError messages={errors.password_confirmation} className="mt-2" />
+                    </div>
+
+                    <div className="flex items-center justify-end mt-4">
+                        <Link href="/login">
+                            <a className="underline text-sm text-gray-600 hover:text-gray-900">
+                                Already registered?
+                            </a>
+                        </Link>
+
+                        <Button className="ml-4">Register</Button>
+                    </div>
+                </form>
+            </AuthCard>
+        </GuestLayout>
     )
 }
 
-export default login
+export default Register
