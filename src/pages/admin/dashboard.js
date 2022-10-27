@@ -6,7 +6,7 @@ const Dashboard = () => {
     return (
         <AdminLayout>
             <Head>
-                <title>Laravel - Dashboard</title>
+                <title>Laravel - new</title>
             </Head>
             <DashbordComponent />
         </AdminLayout>
