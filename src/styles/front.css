@@ -19,3 +19,20 @@ a{
     border-radius: inherit;
     border: none;
 }
+
+.dropdown-toggle::after{
+    display: none !important;
+}
+button#dropdown-basic {
+    background: transparent;
+    border: none;
+}
+.dropdown-menu.show {
+    inset: inherit !important;
+    transform: inherit !important;
+    position: absolute !important;
+    right: 0 !important;
+    margin: 0;
+    padding: 5px;
+    border-radius: inherit;
+}

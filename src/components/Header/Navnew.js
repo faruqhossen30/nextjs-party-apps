@@ -1,7 +1,6 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
-import { Menu, Transition } from '@headlessui/react'
-import { Fragment, useEffect, useRef, useState } from 'react'
-import { FaBell, FaEnvelopeOpen, FaHome, FaUserCircle } from 'react-icons/fa'
+import { FaBell, FaEnvelopeOpen, FaHome, FaUserCircle, AiFillSetting } from 'react-icons/fa'
+import Dropdown from 'react-bootstrap/Dropdown';
 import Link from 'next/link'
 
 export default function Navnew() {
@@ -12,7 +11,6 @@ export default function Navnew() {
                     <div className=" grid grid-cols-12 items-center">
                         <div className="w-full col-span-2 sm:col-span-3 md:col-span-7 lg:col-span-6">
                             <div className="flex items-center flex-grow">
-                                {/* <div> */}
                                 <Link href="/" className="w-10">
                                     <a className="mr-4">
                                         <img
@@ -22,7 +20,6 @@ export default function Navnew() {
                                         />
                                     </a>
                                 </Link>
-                                {/* </div> */}
                                 <div className="hidden md:block w-full">
                                     <div className="rounded-full h-9 bg-white font-sans text-black flex items-center justify-end w-full">
                                         <input
@@ -57,20 +54,206 @@ export default function Navnew() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <a href="#" className="text-white relative">
-                                        <FaEnvelopeOpen className="h-6 w-6" />
-                                        <span className="absolute -top-4 -right-3 animate-pulse font-extrabold  bg-clip-text bg-gradient-to-r from-emerald-400 to-pink-600">
-                                            2
-                                        </span>
-                                    </a>
+                                    <Dropdown>
+                                        <Dropdown.Toggle id="dropdown-basic">
+                                            <a href="#" className="text-white relative">
+                                                <FaEnvelopeOpen className="h-6 w-6" />
+                                                <span className="absolute -top-4 -right-3 animate-pulse font-extrabold  bg-clip-text bg-gradient-to-r from-emerald-400 to-pink-600">
+                                                    2
+                                                </span>
+                                            </a>
+                                        </Dropdown.Toggle>
+
+                                        <Dropdown.Menu className="p-2 w-72 overflow-auto h-96">
+                                            <div className='flex items-center justify-between pt-0 p-2'>
+                                                <h6 className='font-bold m-0'>Messages</h6>
+                                                <span className='cursor-pointer'>...</span>
+                                            </div>
+                                            <div className="">
+                                                <input
+                                                    type="text"
+                                                    className="h-10 w-full rounded-full bg-gray-100 border-0  focus:ring-0"
+                                                    placeholder="Search..."></input>
+                                            </div>
+                                            <Dropdown.Item href="#/action-1">
+                                                <Link href="/settings">
+                                                    <a className='flex items-center'>
+                                                        <img src="/avatar.jpg" className='w-10 h-10 rounded-full' alt="najmul" />
+
+                                                        <div className='ml-2'>
+                                                            <h6 className='m-0 capitalize'>najmul hasan</h6>
+                                                            <p className='m-0 py-.5 text-muted'>lorem ipsum dolor aset</p>
+                                                            <span className='capitalize'>20 Minits ago</span>
+                                                        </div>
+                                                    </a>
+                                                </Link>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#/action-1">
+                                                <Link href="/settings">
+                                                    <a className='flex items-center'>
+                                                        <img src="/avatar.jpg" className='w-10 h-10 rounded-full' alt="najmul" />
+
+                                                        <div className='ml-2'>
+                                                            <h6 className='m-0 capitalize'>najmul hasan</h6>
+                                                            <p className='m-0 py-.5 text-muted'>lorem ipsum dolor aset</p>
+                                                            <span className='capitalize'>20 Minits ago</span>
+                                                        </div>
+                                                    </a>
+                                                </Link>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#/action-1">
+                                                <Link href="/settings">
+                                                    <a className='flex items-center'>
+                                                        <img src="/avatar.jpg" className='w-10 h-10 rounded-full' alt="najmul" />
+
+                                                        <div className='ml-2'>
+                                                            <h6 className='m-0 capitalize'>najmul hasan</h6>
+                                                            <p className='m-0 py-.5 text-muted'>lorem ipsum dolor aset</p>
+                                                            <span className='capitalize'>20 Minits ago</span>
+                                                        </div>
+                                                    </a>
+                                                </Link>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#/action-1">
+                                                <Link href="/settings">
+                                                    <a className='flex items-center'>
+                                                        <img src="/avatar.jpg" className='w-10 h-10 rounded-full' alt="najmul" />
+
+                                                        <div className='ml-2'>
+                                                            <h6 className='m-0 capitalize'>najmul hasan</h6>
+                                                            <p className='m-0 py-.5 text-muted'>lorem ipsum dolor aset</p>
+                                                            <span className='capitalize'>20 Minits ago</span>
+                                                        </div>
+                                                    </a>
+                                                </Link>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#/action-1">
+                                                <Link href="/settings">
+                                                    <a className='flex items-center'>
+                                                        <img src="/avatar.jpg" className='w-10 h-10 rounded-full' alt="najmul" />
+
+                                                        <div className='ml-2'>
+                                                            <h6 className='m-0 capitalize'>najmul hasan</h6>
+                                                            <p className='m-0 py-.5 text-muted'>lorem ipsum dolor aset</p>
+                                                            <span className='capitalize'>20 Minits ago</span>
+                                                        </div>
+                                                    </a>
+                                                </Link>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#/action-1">
+                                                <Link href="/settings">
+                                                    <a className='flex items-center'>
+                                                        <img src="/avatar.jpg" className='w-10 h-10 rounded-full' alt="najmul" />
+
+                                                        <div className='ml-2'>
+                                                            <h6 className='m-0 capitalize'>najmul hasan</h6>
+                                                            <p className='m-0 py-.5 text-muted'>lorem ipsum dolor aset</p>
+                                                            <span className='capitalize'>20 Minits ago</span>
+                                                        </div>
+                                                    </a>
+                                                </Link>
+                                            </Dropdown.Item>
+                                            <button className='bg-emerald-800 text-white block w-full rounded py-2 text-lg font-medium mt-2'>See All</button>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
                                 </li>
                                 <li>
-                                    <a href="#" className="text-white relative">
-                                        <FaBell className="h-6 w-6" />
-                                        <span className="absolute -top-4 -right-3 animate-pulse font-extrabold   bg-clip-text bg-gradient-to-r from-emerald-400 to-pink-600">
-                                            2
-                                        </span>
-                                    </a>
+                                    <Dropdown>
+                                        <Dropdown.Toggle id="dropdown-basic">
+                                            <a href="#" className="text-white relative">
+                                                <FaBell className="h-6 w-6" />
+                                                <span className="absolute -top-4 -right-3 animate-pulse font-extrabold   bg-clip-text bg-gradient-to-r from-emerald-400 to-pink-600">
+                                                    2
+                                                </span>
+                                            </a>
+                                        </Dropdown.Toggle>
+
+                                        <Dropdown.Menu className="p-2 w-72 overflow-auto h-96">
+                                            <div className='flex items-center justify-between pt-0 p-2'>
+                                                <h6 className='font-bold m-0'>Notifications</h6>
+                                                <span className='cursor-pointer'>...</span>
+                                            </div>
+                                            <Dropdown.Item href="#/action-1">
+                                                <Link href="/settings">
+                                                    <a className='flex items-center'>
+                                                        <img src="/avatar.jpg" className='w-10 h-10 rounded-full' alt="najmul" />
+
+                                                        <div className='ml-2'>
+                                                            <h6 className='m-0 capitalize'>najmul hasan</h6>
+                                                            <p className='m-0 py-.5 text-muted'>lorem ipsum dolor aset</p>
+                                                            <span className='capitalize'>20 Minits ago</span>
+                                                        </div>
+                                                    </a>
+                                                </Link>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#/action-1">
+                                                <Link href="/settings">
+                                                    <a className='flex items-center'>
+                                                        <img src="/avatar.jpg" className='w-10 h-10 rounded-full' alt="najmul" />
+
+                                                        <div className='ml-2'>
+                                                            <h6 className='m-0 capitalize'>najmul hasan</h6>
+                                                            <p className='m-0 py-.5 text-muted'>lorem ipsum dolor aset</p>
+                                                            <span className='capitalize'>20 Minits ago</span>
+                                                        </div>
+                                                    </a>
+                                                </Link>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#/action-1">
+                                                <Link href="/settings">
+                                                    <a className='flex items-center'>
+                                                        <img src="/avatar.jpg" className='w-10 h-10 rounded-full' alt="najmul" />
+
+                                                        <div className='ml-2'>
+                                                            <h6 className='m-0 capitalize'>najmul hasan</h6>
+                                                            <p className='m-0 py-.5 text-muted'>lorem ipsum dolor aset</p>
+                                                            <span className='capitalize'>20 Minits ago</span>
+                                                        </div>
+                                                    </a>
+                                                </Link>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#/action-1">
+                                                <Link href="/settings">
+                                                    <a className='flex items-center'>
+                                                        <img src="/avatar.jpg" className='w-10 h-10 rounded-full' alt="najmul" />
+
+                                                        <div className='ml-2'>
+                                                            <h6 className='m-0 capitalize'>najmul hasan</h6>
+                                                            <p className='m-0 py-.5 text-muted'>lorem ipsum dolor aset</p>
+                                                            <span className='capitalize'>20 Minits ago</span>
+                                                        </div>
+                                                    </a>
+                                                </Link>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#/action-1">
+                                                <Link href="/settings">
+                                                    <a className='flex items-center'>
+                                                        <img src="/avatar.jpg" className='w-10 h-10 rounded-full' alt="najmul" />
+
+                                                        <div className='ml-2'>
+                                                            <h6 className='m-0 capitalize'>najmul hasan</h6>
+                                                            <p className='m-0 py-.5 text-muted'>lorem ipsum dolor aset</p>
+                                                            <span className='capitalize'>20 Minits ago</span>
+                                                        </div>
+                                                    </a>
+                                                </Link>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#/action-1">
+                                                <Link href="/settings">
+                                                    <a className='flex items-center'>
+                                                        <img src="/avatar.jpg" className='w-10 h-10 rounded-full' alt="najmul" />
+
+                                                        <div className='ml-2'>
+                                                            <h6 className='m-0 capitalize'>najmul hasan</h6>
+                                                            <p className='m-0 py-.5 text-muted'>lorem ipsum dolor aset</p>
+                                                            <span className='capitalize'>20 Minits ago</span>
+                                                        </div>
+                                                    </a>
+                                                </Link>
+                                            </Dropdown.Item>
+                                            <button className='bg-emerald-800 text-white block w-full rounded py-2 text-lg font-medium mt-2'>See All</button>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
                                 </li>
                                 <li className="text-white">
                                     <form className="w-8">
@@ -90,159 +273,49 @@ export default function Navnew() {
                                         </fieldset>
                                     </form>
                                 </li>
-                                <li className="z-50">
-                                    <Menu
-                                        as="div"
-                                        className="relative text-left">
-                                        <div>
-                                            <Menu.Button className=" w-full justify-center rounded-md text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 flex items-center">
-                                                <img
-                                                    src="/avatar.jpg"
-                                                    alt=""
-                                                    className="w-10 h-10 ring-1 ring-white rounded-full mr-1"
-                                                />
-                                            </Menu.Button>
-                                        </div>
-                                        <Transition
-                                            as={Fragment}
-                                            enter="transition ease-out duration-100"
-                                            enterFrom="transform opacity-0 scale-95"
-                                            enterTo="transform opacity-100 scale-100"
-                                            leave="transition ease-in duration-75"
-                                            leaveFrom="transform opacity-100 scale-100"
-                                            leaveTo="transform opacity-0 scale-95">
-                                            <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                                <div className="px-1 py-1 ">
-                                                    <Menu.Item>
-                                                        {({ active }) => (
-                                                            <Link href="/settings">
-                                                                <a
-                                                                    className={`${active
-                                                                        ? 'bg-black text-white'
-                                                                        : 'text-gray-900'
-                                                                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                                                                    {active ? (
-                                                                        <EditActiveIcon
-                                                                            className="mr-2 h-5 w-5"
-                                                                            aria-hidden="true"
-                                                                        />
-                                                                    ) : (
-                                                                        <EditInactiveIcon
-                                                                            className="mr-2 h-5 w-5"
-                                                                            aria-hidden="true"
-                                                                        />
-                                                                    )}
-                                                                    Setting
-                                                                </a>
-                                                            </Link>
-                                                        )}
-                                                    </Menu.Item>
-                                                    <Menu.Item>
-                                                        {({ active }) => (
-                                                            <Link href="/following">
-                                                                <a
-                                                                    className={`${active
-                                                                        ? 'bg-violet-500 text-white'
-                                                                        : 'text-gray-900'
-                                                                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                                                                    {active ? (
-                                                                        <DuplicateActiveIcon
-                                                                            className="mr-2 h-5 w-5"
-                                                                            aria-hidden="true"
-                                                                        />
-                                                                    ) : (
-                                                                        <DuplicateInactiveIcon
-                                                                            className="mr-2 h-5 w-5"
-                                                                            aria-hidden="true"
-                                                                        />
-                                                                    )}
-                                                                    Following
-                                                                </a>
-                                                            </Link>
-                                                        )}
-                                                    </Menu.Item>
-                                                </div>
-                                                <div className="px-1 py-1">
-                                                    <Menu.Item>
-                                                        {({ active }) => (
-                                                            <Link href="/followers">
-                                                                <a
-                                                                    className={`${active
-                                                                        ? 'bg-violet-500 text-white'
-                                                                        : 'text-gray-900'
-                                                                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                                                                    {active ? (
-                                                                        <ArchiveActiveIcon
-                                                                            className="mr-2 h-5 w-5"
-                                                                            aria-hidden="true"
-                                                                        />
-                                                                    ) : (
-                                                                        <ArchiveInactiveIcon
-                                                                            className="mr-2 h-5 w-5"
-                                                                            aria-hidden="true"
-                                                                        />
-                                                                    )}
-                                                                    Followers
-                                                                </a>
-                                                            </Link>
-                                                        )}
-                                                    </Menu.Item>
-                                                    <Menu.Item>
-                                                        {({ active }) => (
-                                                            <button
-                                                                className={`${active
-                                                                    ? 'bg-violet-500 text-white'
-                                                                    : 'text-gray-900'
-                                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                                                                {active ? (
-                                                                    <MoveActiveIcon
-                                                                        className="mr-2 h-5 w-5"
-                                                                        aria-hidden="true"
-                                                                    />
-                                                                ) : (
-                                                                    <MoveInactiveIcon
-                                                                        className="mr-2 h-5 w-5"
-                                                                        aria-hidden="true"
-                                                                    />
-                                                                )}
-                                                                Move
-                                                            </button>
-                                                        )}
-                                                    </Menu.Item>
-                                                </div>
-                                                <div className="px-1 py-1">
-                                                    <Menu.Item>
-                                                        {({ active }) => (
-                                                            <button
-                                                                className={`${active
-                                                                    ? 'bg-violet-500 text-white'
-                                                                    : 'text-gray-900'
-                                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                                                                {active ? (
-                                                                    <DeleteActiveIcon
-                                                                        className="mr-2 h-5 w-5 text-violet-400"
-                                                                        aria-hidden="true"
-                                                                    />
-                                                                ) : (
-                                                                    <DeleteInactiveIcon
-                                                                        className="mr-2 h-5 w-5 text-violet-400"
-                                                                        aria-hidden="true"
-                                                                    />
-                                                                )}
-                                                                Delete
-                                                            </button>
-                                                        )}
-                                                    </Menu.Item>
-                                                </div>
-                                            </Menu.Items>
-                                        </Transition>
-                                    </Menu>
+                                <li>
+                                    <Dropdown>
+                                        <Dropdown.Toggle id="dropdown-basic">
+                                            <img
+                                                src="/avatar.jpg"
+                                                alt=""
+                                                className="w-10 h-10 ring-1 ring-white rounded-full mr-1"
+                                            />
+                                        </Dropdown.Toggle>
+
+                                        <Dropdown.Menu>
+                                            <Dropdown.Item href="#/action-1">
+                                                <Link href="/settings">
+                                                    <a className='flex items-center font-medium'>
+                                                        <FaUserCircle className='mr-2' />
+                                                        Settings
+                                                    </a>
+                                                </Link>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#/action-2">
+                                                <Link href="/following">
+                                                    <a className='flex items-center font-medium'>
+                                                        <FaUserCircle className='mr-2' />
+                                                        Following
+                                                    </a>
+                                                </Link>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#/action-3">
+                                                <Link href="/followers">
+                                                    <a className='flex items-center font-medium'>
+                                                        <FaUserCircle className='mr-2' />
+                                                        Followers
+                                                    </a>
+                                                </Link>
+                                            </Dropdown.Item>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </section>
-            </div >
+            </div>
         </>
     )
 }

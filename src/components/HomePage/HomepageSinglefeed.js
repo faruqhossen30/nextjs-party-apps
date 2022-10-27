@@ -42,7 +42,7 @@ const HomepageSinglefeed = () => {
                         </a>
                     </div>
                     <div className='ml-2 capitalize'>
-                        <a href='#'><h6 className='leading-none'><strong>najmul hasan</strong></h6></a>
+                        <a href='#'><h6 className='leading-none m-0'><strong>najmul hasan</strong></h6></a>
                         <span>10 minits ago</span>
                         <p className='text-justify text-sm'>হামলা-মারধরের ঘটনায় ছাত্রলীগের ১৪ জন নেতা-কর্মীর নাম উল্লেখ করে মামলার আবেদন করেছেন ছাত্র অধিকার পরিষদের সভাপতি বিন ইয়ামীন মোল্লা। আবেদনে ৪০ থেকে ৫০ জনকে অজ্ঞাত আসামি করা হয়েছে।
 

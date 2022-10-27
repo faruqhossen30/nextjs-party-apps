@@ -3,8 +3,8 @@ import { FaImage, FaFileVideo, FaList } from 'react-icons/fa'
 
 const HomepageCreatepost = () => {
     return (
-        <div>
-            <div className='bg-white rounded p-4'>
+        <form>
+            <div className="bg-white rounded p-4">
                 <h6>
                     <strong>Create New Post</strong>
                 </h6>
@@ -12,7 +12,7 @@ const HomepageCreatepost = () => {
                     <textarea
                         id="message"
                         rows="4"
-                        class="block p-2.5 w-full text-sm text-gray-900 border-emerald-700 rounded-lg border border-emerald-700 focus:ring-emerald-500 focus:border-emerald-700"
+                        class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-emerald-700 focus:ring-emerald-500 focus:border-emerald-700"
                         placeholder="Write something here..."></textarea>
                 </div>
                 <div className="flex items-center justify-between py-2 px-3">
@@ -37,7 +37,7 @@ const HomepageCreatepost = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     )
 }
 
