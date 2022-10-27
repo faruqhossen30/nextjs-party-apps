@@ -118,8 +118,8 @@ export default function Navnew() {
                                                             <Link href="/settings">
                                                                 <a
                                                                     className={`${active
-                                                                            ? 'bg-black text-white'
-                                                                            : 'text-gray-900'
+                                                                        ? 'bg-black text-white'
+                                                                        : 'text-gray-900'
                                                                         } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
                                                                     {active ? (
                                                                         <EditActiveIcon
@@ -139,56 +139,60 @@ export default function Navnew() {
                                                     </Menu.Item>
                                                     <Menu.Item>
                                                         {({ active }) => (
-                                                            <button
-                                                                className={`${active
+                                                            <Link href="/following">
+                                                                <a
+                                                                    className={`${active
                                                                         ? 'bg-violet-500 text-white'
                                                                         : 'text-gray-900'
-                                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                                                                {active ? (
-                                                                    <DuplicateActiveIcon
-                                                                        className="mr-2 h-5 w-5"
-                                                                        aria-hidden="true"
-                                                                    />
-                                                                ) : (
-                                                                    <DuplicateInactiveIcon
-                                                                        className="mr-2 h-5 w-5"
-                                                                        aria-hidden="true"
-                                                                    />
-                                                                )}
-                                                                Duplicate
-                                                            </button>
+                                                                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                                                                    {active ? (
+                                                                        <DuplicateActiveIcon
+                                                                            className="mr-2 h-5 w-5"
+                                                                            aria-hidden="true"
+                                                                        />
+                                                                    ) : (
+                                                                        <DuplicateInactiveIcon
+                                                                            className="mr-2 h-5 w-5"
+                                                                            aria-hidden="true"
+                                                                        />
+                                                                    )}
+                                                                    Following
+                                                                </a>
+                                                            </Link>
                                                         )}
                                                     </Menu.Item>
                                                 </div>
                                                 <div className="px-1 py-1">
                                                     <Menu.Item>
                                                         {({ active }) => (
-                                                            <button
-                                                                className={`${active
+                                                            <Link href="/followers">
+                                                                <a
+                                                                    className={`${active
                                                                         ? 'bg-violet-500 text-white'
                                                                         : 'text-gray-900'
-                                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                                                                {active ? (
-                                                                    <ArchiveActiveIcon
-                                                                        className="mr-2 h-5 w-5"
-                                                                        aria-hidden="true"
-                                                                    />
-                                                                ) : (
-                                                                    <ArchiveInactiveIcon
-                                                                        className="mr-2 h-5 w-5"
-                                                                        aria-hidden="true"
-                                                                    />
-                                                                )}
-                                                                Archive
-                                                            </button>
+                                                                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                                                                    {active ? (
+                                                                        <ArchiveActiveIcon
+                                                                            className="mr-2 h-5 w-5"
+                                                                            aria-hidden="true"
+                                                                        />
+                                                                    ) : (
+                                                                        <ArchiveInactiveIcon
+                                                                            className="mr-2 h-5 w-5"
+                                                                            aria-hidden="true"
+                                                                        />
+                                                                    )}
+                                                                    Followers
+                                                                </a>
+                                                            </Link>
                                                         )}
                                                     </Menu.Item>
                                                     <Menu.Item>
                                                         {({ active }) => (
                                                             <button
                                                                 className={`${active
-                                                                        ? 'bg-violet-500 text-white'
-                                                                        : 'text-gray-900'
+                                                                    ? 'bg-violet-500 text-white'
+                                                                    : 'text-gray-900'
                                                                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
                                                                 {active ? (
                                                                     <MoveActiveIcon
@@ -211,8 +215,8 @@ export default function Navnew() {
                                                         {({ active }) => (
                                                             <button
                                                                 className={`${active
-                                                                        ? 'bg-violet-500 text-white'
-                                                                        : 'text-gray-900'
+                                                                    ? 'bg-violet-500 text-white'
+                                                                    : 'text-gray-900'
                                                                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
                                                                 {active ? (
                                                                     <DeleteActiveIcon
@@ -238,7 +242,7 @@ export default function Navnew() {
                         </div>
                     </div>
                 </section>
-            </div>
+            </div >
         </>
     )
 }
