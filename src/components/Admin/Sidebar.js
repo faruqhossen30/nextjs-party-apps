@@ -5,11 +5,11 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { Badge } from 'react-bootstrap';
 
 const Sidebar = () => {
-    const [show, setShow] = useState( false);
+    const [show, setShow] = useState(false);
     const ToggleData = () => {
         setShow(!show);
     };
-    const [show2, setShow2] = useState( false);
+    const [show2, setShow2] = useState(false);
     const ToggleData2 = () => {
         setShow2(!show2);
     };
@@ -17,9 +17,9 @@ const Sidebar = () => {
         <nav className="sidebar">
             <div className="sidebar-header">
                 <Link href="/admin/dashboard" >
-                <a  className="sidebar-brand">
-                    PARTY<span> UI</span>
-                </a>
+                    <a className="sidebar-brand">
+                        PARTY<span> UI</span>
+                    </a>
                 </Link>
                 <div className="sidebar-toggler">
                     <FaBars />
@@ -29,10 +29,10 @@ const Sidebar = () => {
                 <ul className='p-2 m-0 text-body vh-100 overflow-auto'>
                     <li>
                         <Link href="/admin/dashboard">
-                        <a className='flex items-center px-2 text-body'>
-                            <FaHome />
-                            <span className='pl-2 '>Dashboard</span>
-                        </a>
+                            <a className='flex items-center px-2 text-body'>
+                                <FaHome />
+                                <span className='pl-2 '>Dashboard</span>
+                            </a>
                         </Link>
                     </li>
                     <li>
@@ -88,10 +88,12 @@ const Sidebar = () => {
                         </ul>
                     </li>
                     <li>
-                        <a href="#" className='flex items-center px-2 text-body'>
-                            <FaUser />
-                            <span className='pl-2 '>Users</span>
-                        </a>
+                        <Link href='/admin/users'>
+                            <a className='flex items-center px-2 text-body'>
+                                <FaUser />
+                                <span className='pl-2 '>Users</span>
+                            </a>
+                        </Link>
                     </li>
                     <li>
                         <a href="#" className='flex items-center px-2 text-body'>

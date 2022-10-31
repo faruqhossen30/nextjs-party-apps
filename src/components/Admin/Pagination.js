@@ -1,19 +1,39 @@
 import Link from 'next/link'
-import React from 'react'
-import Pagination from 'react-bootstrap/Pagination';
+import renderHTML from 'react-render-html';
 
-const PaginationComponent = ({ links }) => {
+const PaginationComponent = ({ links, data }) => {
+
+    function pageNumber(pageURL) {
+        let url = new URL(pageURL);
+        let page = url.searchParams.get("page");
+        return page;
+    }
+
     return (
         <>
-            <Pagination>
-            {
-                links.map((link, index) => {
-                    return (
-                        <Pagination.Item key={index} active={link.active} href={link.url} disabled={link.active} >{link.label}</Pagination.Item>
-                    )
-                })
-            }
-            </Pagination>
+            <nav className="d-flex justify-items-center justify-content-between">
+
+                <div className="d-none flex-sm-fill d-sm-flex align-items-sm-center justify-content-sm-between">
+
+                    <div>
+                        <ul className="pagination">
+                            {
+                                data.links.map((link, index) => {
+                                    // console.log(link.url + '=' + typeof (link.url))
+                                    return (
+                                        <li className={`page-item ${link.active && 'active' || link.url == null && 'disabled'}`} key={index}>
+                                            <Link href={`?page=${typeof link.url === 'string' && pageNumber(link.url)}`} >
+                                                <a className={`page-link`} > {renderHTML(link.label)} </a>
+                                            </Link>
+                                        </li>
+                                    )
+                                })
+                            }
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
         </>
     )
