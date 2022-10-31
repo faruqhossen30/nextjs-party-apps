@@ -6,17 +6,14 @@ import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React from 'react'
 import { Form } from 'react-bootstrap'
+import Breadcrumb from '@/components/BreadCrumb'
 
 const settings = () => {
     return (
         <div>
             <Navnew />
 
-            <div className="bg-gradient-to-r from-cyan-500 to-blue-500 m-2 p-20 rounded ">
-                <h2 className="text-white font-bold uppercase">
-                    Account Setting
-                </h2>
-            </div>
+            <Breadcrumb title="Profile Setting" />
 
             <div className="container-fluid">
                 <Tab.Container defaultActiveKey="profile_information">
