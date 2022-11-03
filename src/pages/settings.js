@@ -12,9 +12,7 @@ const settings = () => {
     return (
         <div>
             <Navnew />
-
             <Breadcrumb title="Profile Setting" />
-
             <div className="container-fluid">
                 <Tab.Container defaultActiveKey="profile_information">
                     <div className="bg-white rounded py-4 my-4">
@@ -22,7 +20,7 @@ const settings = () => {
                             <Nav variant="pills" className="flex-column">
                                 <div className="flex flex-wrap justify-center">
                                     <Nav.Item>
-                                        <Nav.Link eventKey="profile_information" >
+                                        <Nav.Link eventKey="profile_information">
                                             Profile Information
                                         </Nav.Link>
                                     </Nav.Item>
@@ -174,7 +172,11 @@ const settings = () => {
                                             </Form.Group>
                                         </div>
                                     </div>
-                                    <Button variant="primary" className="bg-emerald-700">Submit</Button>{' '}
+                                    <Button
+                                        variant="primary"
+                                        className="bg-emerald-700">
+                                        Submit
+                                    </Button>{' '}
                                 </Form>
                             </Tab.Pane>
                             <Tab.Pane eventKey="account">
