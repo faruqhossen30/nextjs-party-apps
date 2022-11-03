@@ -66,7 +66,7 @@ const HomepageSinglefeed = () => {
                     <textarea
                         id="message"
                         rows="4"
-                        class="ml-2 block p-2.5 h-16 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-emerald-700 focus:ring-emerald-700 focus:border-emerald-700 "
+                        className="ml-2 block p-2.5 h-16 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-emerald-700 focus:ring-emerald-700 focus:border-emerald-700 "
                         placeholder="Write something here..."></textarea>
                     <div className='absolute right-2 top-10'>
                         <FaFileVideo className='cursor-pointer' />

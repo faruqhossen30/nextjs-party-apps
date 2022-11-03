@@ -8,7 +8,7 @@ const HomepageSuggestiongroup = () => {
                     <strong>Suggested Groups</strong>
                 </h6>
                 <div className='mt-4'>
-                    <a href='#' className='flex items-center mb-6'>
+                    <div className='flex items-center mb-6'>
                         <div>
                             <img src="/user.jpg" alt="" className='rounded w-16 h-16' />
                         </div>
@@ -17,8 +17,8 @@ const HomepageSuggestiongroup = () => {
                             <span>1215 Members</span> <br />
                             <a href="#">Join Community</a>
                         </div>
-                    </a>
-                    <a href='#' className='flex items-center mb-6'>
+                    </div>
+                    <div className='flex items-center mb-6'>
                         <div>
                             <img src="/user.jpg" alt="" className='rounded w-16 h-16' />
                         </div>
@@ -27,8 +27,8 @@ const HomepageSuggestiongroup = () => {
                             <span>1215 Members</span> <br />
                             <a href="#">Join Community</a>
                         </div>
-                    </a>
-                    <a href='#' className='flex items-center mb-6'>
+                    </div>
+                    <div className='flex items-center mb-6'>
                         <div>
                             <img src="/user.jpg" alt="" className='rounded w-16 h-16' />
                         </div>
@@ -37,7 +37,7 @@ const HomepageSuggestiongroup = () => {
                             <span>1215 Members</span> <br />
                             <a href="#">Join Community</a>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
