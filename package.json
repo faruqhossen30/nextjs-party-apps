@@ -19,9 +19,8 @@
     "react-dropzone": "^14.2.3",
     "react-icons": "^4.6.0",
     "react-leaf-polls": "^1.1.6",
-    "react-video-upload-preview": "^1.0.1",
-    "react-laravel-paginex": "^2.0.8",
     "react-render-html": "^0.6.0",
+    "react-video-upload-preview": "^1.0.1",
     "swr": "^1.2.2"
   },
   "devDependencies": {

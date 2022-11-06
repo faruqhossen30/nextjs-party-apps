@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useAuth } from '@/hooks/auth'
 import { useDropzone } from 'react-dropzone'
 import Video from './Video'
 
@@ -38,7 +39,15 @@ const img = {
 }
 
 const HomepageCreatepost = () => {
+    const { user } = useAuth({ middleware: 'guest' })
     const [files, setFiles] = useState([])
+    const [file, setFile] = useState()
+    const [body, setBody] = useState()
+
+    const changeHandaler = (e)=>{
+        setBody(e.target.value);
+        setFile(e.target.value);
+    }
     const { getRootProps, getInputProps } = useDropzone({
         accept: {
             'image/*': [],
@@ -68,20 +77,21 @@ const HomepageCreatepost = () => {
         </div>
     ))
 
-    function createPost(e) {
+    // const csrf = () => axios.get('/sanctum/csrf-cookie')
+    async function createPost(e) {
         e.preventDefault()
         let url = `${process.env.NEXT_PUBLIC_API_URL}/post`
-        console.log(url)
-        const csrf = () => axios.get('/sanctum/csrf-cookie')
-        console.log(csrf)
+        console.log(body)
+        console.log(files)
         axios
             .post(`${process.env.NEXT_PUBLIC_API_URL}/post`, {
-                body: 'This is a new post.',
-                user_id: 1,
-                _token: csrf(),
+                body: body,
+                user_id: user.id,
+                files: files
             })
             .then(response => {
-                setPost(response.data)
+                console.log(response);
+                setBody('')
             })
     }
 
@@ -93,7 +103,7 @@ const HomepageCreatepost = () => {
         <form
             method="POST"
             onSubmit={createPost}
-            className="bg-white rounded p-4">
+            className="bg-white rounded p-4" encType='multipart/form-data' >
             <div className="bg-white rounded p-4 pb-3">
                 <h6>
                     <strong>Create New Post</strong>
@@ -101,16 +111,16 @@ const HomepageCreatepost = () => {
                 <div>
                     <textarea
                         name="body"
+                        onChange={changeHandaler}
                         id="message"
                         rows="3"
-                        class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-emerald-700 focus:ring-emerald-500 focus:border-emerald-700 mb-2"
                         className="block p-2.5 w-full text-sm text-gray-900 border-emerald-700 rounded-lg border border-emerald-700 focus:ring-emerald-500 focus:border-emerald-700"
                         placeholder="Write something here..."></textarea>
                     <span>{thumbs}</span>
                 </div>
                 <div className="flex items-center justify-between  px-3">
                     <div {...getRootProps({ className: 'dropzone' })}>
-                        <input {...getInputProps()} />
+                        <input name='file' onChange={changeHandaler} {...getInputProps()} />
                         <div className="flex items-center space-x-1 cursor-pointer">
                             <FaImage />
                             <span>Photo</span>
@@ -120,7 +130,7 @@ const HomepageCreatepost = () => {
                         {/*
                 <FaFileVideo />
                 <span>Video</span> */}
-                        <Video />
+                        {/* <Video /> */}
                     </div>
                     <div className="flex items-center space-x-1 cursor-pointer">
                         <FaList />
