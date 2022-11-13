@@ -4,11 +4,67 @@ import Row from 'react-bootstrap/Row'
 import Nav from 'react-bootstrap/Nav'
 import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import React from 'react'
+import React, { useState ,useEffect} from 'react'
 import { Form } from 'react-bootstrap'
 import Breadcrumb from '@/components/BreadCrumb'
+import axios from 'axios'
 
 const settings = () => {
+    const [value, setValue] = useState("b");
+
+    const [profile, setProfile]= useState(
+        {
+            file: 'najmul',
+            name: 'najmul',
+            email:'najmul@gmail.com ',
+            mobile:'01937563157',
+            dob:'22.22.22',
+            gender:'male',
+            occupation:'developer',
+            address:'dhaka',
+            relation_status:'married',
+            blood:'b+',
+            website:'najmul.com',
+            facebook:'facebook.com/najmul57',
+            youtube:'youtube.com/najmul57',
+            twitter:'twitter.com/najmul57',
+        }
+    )
+
+    console.log(profile);
+
+    async function profileUpdate(e) {
+        e.preventDefault()
+        let url = `${process.env.NEXT_PUBLIC_API_URL}/profile`
+        console.log(profile)
+        axios
+            .post(`${process.env.NEXT_PUBLIC_API_URL}/profile`, {
+                file:file,
+                name:name,
+                email:email,
+                mobile:mobile,
+                dob:dob,
+                gender:gender,
+                occupation:occupation,
+                address:address,
+                relation_status:relation_status,
+                blood:blood,
+                website:website,
+                facebook:facebook,
+                youtube:youtube,
+                twitter:twitter
+            })
+            .then(response => {
+                console.log(response);
+                setProfile('');
+            })
+    }
+
+    useEffect(() => {
+        return () => files.forEach(file => URL.revokeObjectURL(file.preview))
+    }, [])
+
+
     return (
         <div>
             <Navnew />
@@ -57,123 +113,216 @@ const settings = () => {
                     <div className="bg-white p-3 rounded mb-2">
                         <Tab.Content>
                             <Tab.Pane eventKey="profile_information">
-                                <Form>
+                                <Form
+                                 method="POST"
+                                 onSubmit={profileUpdate}
+                                 encType='multipart/form-data'>
                                     <h4>Profile Information</h4>
                                     <div className="grid grid-cols-12 mx-auto">
                                         <div className="col-span-12 md:col-span-6 mx-2">
+
+                                            <div className="grid grid-cols-12 mx-auto ">
+                                                <div className='col-span-8'>
+                                                    <Form.Group
+                                                        className="mb-3">
+                                                        <Form.Label>
+                                                            Avatar
+                                                        </Form.Label>
+                                                        <Form.Control
+                                                            type="file"
+                                                            name='file'
+                                                            onChange={e=>setProfile({...profile,file:e.target.value})}
+
+                                                        />
+                                                    </Form.Group>
+                                                </div>
+                                                <div className='col-span-4 ml-auto'>
+                                                    <img src="/user.jpg" alt="" className="rounded w-32 h-32" />
+                                                </div>
+                                            </div>
+
                                             <Form.Group
-                                                className="mb-3"
-                                                controlId="exampleForm.ControlInput1">
+                                                className="mb-3">
                                                 <Form.Label>
-                                                    First Name
+                                                    Name
                                                 </Form.Label>
                                                 <Form.Control
                                                     type="text"
-                                                    placeholder="First Name"
+                                                    name='name'
+                                                    onChange={e=>setProfile({...profile, name: e.target.value})}
+                                                    placeholder="Enter Your Name"
+
                                                 />
                                             </Form.Group>
+
                                             <Form.Group
-                                                className="mb-3"
-                                                controlId="exampleForm.ControlInput1">
-                                                <Form.Label>
-                                                    Last Name
-                                                </Form.Label>
-                                                <Form.Control
-                                                    type="text"
-                                                    placeholder="Last Name"
-                                                />
-                                            </Form.Group>
-                                            <Form.Group
-                                                className="mb-3"
-                                                controlId="exampleForm.ControlInput1">
+                                                className="mb-3">
                                                 <Form.Label>Email</Form.Label>
                                                 <Form.Control
                                                     type="email"
+                                                    name='email'
+                                                    onChange={e=>setProfile({...profile, email: e.target.value})}
                                                     placeholder="Email Address"
+
                                                 />
                                             </Form.Group>
+
                                             <Form.Group
-                                                className="mb-3"
-                                                controlId="exampleForm.ControlInput1">
-                                                <Form.Label>
-                                                    Relation Status
-                                                </Form.Label>
-                                                <Form.Select size="md">
-                                                    <option>
-                                                        Small select
-                                                    </option>
-                                                </Form.Select>
-                                            </Form.Group>
-                                            <Form.Group
-                                                className="mb-3"
-                                                controlId="exampleForm.ControlInput1">
-                                                <Form.Label>Website</Form.Label>
+                                                className="mb-3">
+                                                <Form.Label>Mobile</Form.Label>
                                                 <Form.Control
-                                                    type="url"
-                                                    placeholder="abc.com"
+                                                    type="text"
+                                                    name='mobile'
+                                                    onChange={e=>setProfile({...profile, mobile: e.target.value})}
+                                                    placeholder="Enter Mobile"
+
+                                                />
+                                            </Form.Group>
+
+                                            <Form.Group
+                                                className="mb-3">
+                                                <Form.Label>Date of Birth</Form.Label>
+                                                <Form.Control
+                                                    type="date"
+                                                    name='dob'
+                                                    onChange={e=>setProfile({...profile, dob: e.target.value})}
+
+                                                />
+                                            </Form.Group>
+
+                                            <Form.Group
+                                                className="mb-3">
+                                                <Form.Label>
+                                                    Gender
+                                                </Form.Label>
+                                                <select
+                                                    value={value}
+                                                    className="form-control"
+                                                    name='gender'
+                                                    onChange={e=>setProfile({...profile, gender: e.target.value})}
+
+                                                >
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+                                            </Form.Group>
+
+                                            <Form.Group
+                                                className="mb-3">
+                                                <Form.Label>Occupation</Form.Label>
+                                                <Form.Control
+                                                    type="text"
+                                                    placeholder='Occupation'
+                                                    name='occupation'
+                                                    onChange={e=>setProfile({...profile, occupation: e.target.value})}
+
                                                 />
                                             </Form.Group>
                                         </div>
                                         <div className="col-span-12 md:col-span-6 mx-2 ">
-                                            <Form.Group
-                                                className="mb-3"
-                                                controlId="exampleForm.ControlInput1">
-                                                <Form.Label>
-                                                    Last Name
-                                                </Form.Label>
+
+                                            <Form.Group className="mb-3">
+                                                <Form.Label>Address</Form.Label>
                                                 <Form.Control
-                                                    type="text"
-                                                    placeholder="Last Name"
-                                                />
+                                                    name='address'
+                                                    onChange={e=>setProfile({...profile, address: e.target.value})}
+                                                    placeholder='Address'
+
+                                                    as="textarea" rows={2} />
                                             </Form.Group>
                                             <Form.Group
-                                                className="mb-3"
-                                                controlId="exampleForm.ControlInput1">
+                                                className="mb-3">
                                                 <Form.Label>
-                                                    First Name
+                                                    Relation Status
                                                 </Form.Label>
+                                                <select
+                                                    value={value}
+                                                    name="relation_status"
+                                                    onChange={e=>setProfile({...profile, relation_status: e.target.value})}
+                                                    className="form-control"
+
+                                                >
+                                                    <option value="married">Married</option>
+                                                    <option value="unmarried">Unmarried</option>
+                                                </select>
+                                            </Form.Group>
+
+                                            <Form.Group
+                                                className="mb-3">
+                                                <Form.Label>
+                                                    Blood Group
+                                                </Form.Label>
+                                                <select
+                                                    value={value}
+                                                    className="form-control"
+                                                    name='blood'
+                                                    onChange={e=>setProfile({...profile, blood: e.target.value})}
+
+                                                >
+                                                    <option value="a+">A+</option>
+                                                    <option value="a-">A-</option>
+                                                    <option value="b+">B+</option>
+                                                    <option value="b-">B-</option>
+                                                    <option value="o+">O+</option>
+                                                    <option value="o-">O-</option>
+                                                    <option value="ab+">AB+</option>
+                                                    <option value="ab-">AB-</option>
+                                                </select>
+                                            </Form.Group>
+
+                                            <Form.Group
+                                                className="mb-3">
+                                                <Form.Label>Website</Form.Label>
                                                 <Form.Control
                                                     type="text"
-                                                    placeholder="First Name"
+                                                    name='website'
+                                                    onChange={e=>setProfile({...profile, website: e.target.value})}
+
+                                                    placeholder='Enter Your Website'
                                                 />
                                             </Form.Group>
+
                                             <Form.Group
-                                                className="mb-3"
-                                                controlId="exampleForm.ControlInput1">
-                                                <Form.Label>
-                                                    First Name
-                                                </Form.Label>
+                                                className="mb-3">
+                                                <Form.Label>Facebook</Form.Label>
                                                 <Form.Control
                                                     type="text"
-                                                    placeholder="First Name"
+                                                    name='facebook'
+                                                    onChange={e=>setProfile({...profile, facebook: e.target.value})}
+
+                                                    placeholder='Enter Your Facebook Link'
                                                 />
                                             </Form.Group>
+
                                             <Form.Group
-                                                className="mb-3"
-                                                controlId="exampleForm.ControlInput1">
-                                                <Form.Label>
-                                                    First Name
-                                                </Form.Label>
+                                                className="mb-3">
+                                                <Form.Label>Youtube</Form.Label>
                                                 <Form.Control
                                                     type="text"
-                                                    placeholder="First Name"
+
+                                                    name='youtube'
+                                                    onChange={e=>setProfile({...profile, youtube: e.target.value})}
+                                                    placeholder='Enter Your Youtube Link'
                                                 />
                                             </Form.Group>
+
                                             <Form.Group
-                                                className="mb-3"
-                                                controlId="exampleForm.ControlInput1">
-                                                <Form.Label>
-                                                    First Name
-                                                </Form.Label>
+                                                className="mb-3">
+                                                <Form.Label>Twitter</Form.Label>
                                                 <Form.Control
                                                     type="text"
-                                                    placeholder="First Name"
+                                                    name='twitter'
+                                                    onChange={e=>setProfile({...profile, twitter: e.target.value})}
+
+                                                    placeholder='Enter Your Twitter Link'
                                                 />
                                             </Form.Group>
                                         </div>
                                     </div>
                                     <Button
                                         variant="primary"
+                                        type='submit'
                                         className="bg-emerald-700">
                                         Submit
                                     </Button>{' '}

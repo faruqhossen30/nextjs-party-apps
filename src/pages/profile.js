@@ -1,5 +1,6 @@
+import Axios from 'axios'
 import Navnew from '@/components/Header/Navnew'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
@@ -17,8 +18,6 @@ import ProfileHead from '@/components/Profile/ProfileHead';
 
 
 const Profile = () => {
-
-
 
     return (
         <>
@@ -84,7 +83,7 @@ const Profile = () => {
 
                                         <HomepageStory />
 
-                                        <HomepageSinglefeed />
+
 
                                     </div>
                                     <div className="hidden md:block md:col-span-3">

@@ -9,7 +9,7 @@ import HomepageStory from './HomepageStory'
 import HomepageSuggestiongroup from './HomepageSuggestiongroup'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const HomePage = () => {
+const HomePage = ({posts}) => {
     return (
         <>
             <div className="grid grid-cols-12 mx-auto">
@@ -27,7 +27,7 @@ const HomePage = () => {
 
                     <HomepageStory />
 
-                    <HomepageSinglefeed />
+                    <HomepageSinglefeed posts={posts} />
                 </div>
                 <div className="hidden md:block md:col-span-3">
                     <HomepageBirthday />
@@ -38,5 +38,9 @@ const HomePage = () => {
         </>
     )
 }
+
+
+
+
 
 export default HomePage

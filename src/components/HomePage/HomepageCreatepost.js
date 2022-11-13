@@ -3,7 +3,7 @@ import { useAuth } from '@/hooks/auth'
 import { useDropzone } from 'react-dropzone'
 import Video from './Video'
 
-import axios from 'axios'
+import axios from '@/lib/axios'
 
 import { FaImage, FaFileVideo, FaList } from 'react-icons/fa'
 
@@ -41,13 +41,36 @@ const img = {
 const HomepageCreatepost = () => {
     const { user } = useAuth({ middleware: 'guest' })
     const [files, setFiles] = useState([])
-    const [file, setFile] = useState()
+    const [file, setFile] = useState([])
     const [body, setBody] = useState()
 
     const changeHandaler = (e)=>{
         setBody(e.target.value);
-        setFile(e.target.value);
     }
+  // a local state to store the currently selected file.
+//   const [selectedFile, setSelectedFile] = useState(null);
+
+//   const handleSubmit = async(event) => {
+//     event.preventDefault()
+//     const formData = new FormData();
+//     // formData.append("selectedFile", selectedFile);
+//     try {
+//       const response = await axios({
+//         method: "post",
+//         url: `${process.env.NEXT_PUBLIC_API_URL}/post`,
+//         data: formData,
+//         // headers: { "Content-Type": "multipart/form-data" },
+//       });
+//     } catch(error) {
+//       console.log(error)
+//     }
+//   }
+
+  const handleFileSelect = (event) => {
+    setSelectedFile(event.target.files[0])
+  }
+
+
     const { getRootProps, getInputProps } = useDropzone({
         accept: {
             'image/*': [],
@@ -78,26 +101,35 @@ const HomepageCreatepost = () => {
     ))
 
     // const csrf = () => axios.get('/sanctum/csrf-cookie')
+    const csrf = () => axios.get('/sanctum/csrf-cookie')
     async function createPost(e) {
         e.preventDefault()
         let url = `${process.env.NEXT_PUBLIC_API_URL}/post`
         console.log(body)
-        console.log(files)
-        axios
+        console.log('file',file)
+        console.log('files',files)
+        await axios
             .post(`${process.env.NEXT_PUBLIC_API_URL}/post`, {
                 body: body,
                 user_id: user.id,
-                files: files
+                file: files
             })
             .then(response => {
                 console.log(response);
-                setBody('')
+                window.location.reload();
             })
     }
 
     useEffect(() => {
         return () => files.forEach(file => URL.revokeObjectURL(file.preview))
     }, [])
+
+
+
+
+
+
+
 
     return (
         <form
@@ -120,7 +152,8 @@ const HomepageCreatepost = () => {
                 </div>
                 <div className="flex items-center justify-between  px-3">
                     <div {...getRootProps({ className: 'dropzone' })}>
-                        <input name='file' onChange={changeHandaler} {...getInputProps()} />
+                        {/* <input name='file' onChange={handleFileSelect} {...getInputProps()} /> */}
+                        <input name='file[]' onChange={handleFileSelect} />
                         <div className="flex items-center space-x-1 cursor-pointer">
                             <FaImage />
                             <span>Photo</span>

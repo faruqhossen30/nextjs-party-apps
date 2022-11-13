@@ -13,6 +13,12 @@ const Sidebar = () => {
     const ToggleData2 = () => {
         setShow2(!show2);
     };
+
+    const [location, setLocation] = useState(false);
+    const locationToggle = () => {
+        setLocation(!location);
+    };
+
     return (
         <nav className="sidebar">
             <div className="sidebar-header">
@@ -61,30 +67,30 @@ const Sidebar = () => {
                             </li>
                         </ul>
                     </li>
+                    {/* //organization */}
+
                     <li>
-                        <a href="#others" data-bs-toggle="collapse" className='flex items-center px-2 text-body' onClick={ToggleData2}>
+                        <a  data-bs-toggle="collapse" className='flex items-center px-2 text-body' onClick={ToggleData2}>
                             <FaUsers />
                             <span className='pl-2 '>Organization</span>
                         </a>
                         <ul className={`collapse ${show2 ? 'show' : ''}`} id="others" data-bs-parent="#others" >
+                            <Link href="/admin/organization/organization">
                             <li>
-                                <a href="/admin/organization" className='flex items-center'>
+                                <a className='flex items-center'>
                                     <FaHome />
-                                    <span className='px-2'>Organization</span>
+                                    <span className='px-2'>Organization List</span>
                                 </a>
                             </li>
+                            </Link>
+                            <Link href="/admin/organization/add_organization">
                             <li>
-                                <a href="#" className='flex items-center'>
+                                <a className='flex items-center'>
                                     <FaHome />
-                                    <span className='px-2'>All Admin</span>
+                                    <span className='px-2'>Add Organization</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#" className='flex items-center'>
-                                    <FaHome />
-                                    <span className='px-2'>All Admin</span>
-                                </a>
-                            </li>
+                            </Link>
                         </ul>
                     </li>
                     <li>
@@ -102,10 +108,44 @@ const Sidebar = () => {
                         </a>
                     </li>
                     <li>
-                        <a href="#" className='flex items-center px-2 text-body'>
+                        <a className='flex items-center px-2 text-body' data-bs-toggle="collapse" onClick={locationToggle}>
                             <FaMap />
                             <span className='pl-2 '>Location</span>
                         </a>
+                        <ul className={`collapse ${location ? 'show' : ''}`} id="locations" data-bs-parent="#locations" >
+                            <Link href='/admin/location/divisions'>
+                            <li>
+                                <a className='flex items-center'>
+                                    <FaHome />
+                                    <span className='px-2'>Divisions</span>
+                                </a>
+                            </li>
+                            </Link>
+                            <Link href='/admin/location/districts'>
+                            <li>
+                                <a className='flex items-center'>
+                                    <FaHome />
+                                    <span className='px-2'>Districts</span>
+                                </a>
+                            </li>
+                            </Link>
+                            <Link href='/admin/location/upazilas'>
+                            <li>
+                                <a className='flex items-center'>
+                                    <FaHome />
+                                    <span className='px-2'>Upazilas</span>
+                                </a>
+                            </li>
+                            </Link>
+                            <Link href='/admin/location/unions'>
+                            <li>
+                                <a className='flex items-center'>
+                                    <FaHome />
+                                    <span className='px-2'>Unions</span>
+                                </a>
+                            </li>
+                            </Link>
+                        </ul>
                     </li>
                     {/* <li onClick={logout}>
                         <a href="#" className='flex items-center px-2 text-body'>
