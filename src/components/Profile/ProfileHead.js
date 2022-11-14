@@ -1,6 +1,8 @@
-import React from 'react'
+import UserContext from '@/contexts/Usercontext';
+import React, { useContext } from 'react'
 
 const ProfileHead = () => {
+    const user = useContext(UserContext);
     return (
         <div>
             <div className="relative">
@@ -15,7 +17,7 @@ const ProfileHead = () => {
 
                     <div className="ml-10 pt-10">
                         <h6 className="capitalize text-2xl">
-                            <strong>najmul hasan</strong>
+                            <strong>{user.name}</strong>
                         </h6>
                         <h6>Jessore</h6>
                     </div>

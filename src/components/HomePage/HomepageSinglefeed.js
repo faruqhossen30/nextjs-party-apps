@@ -14,7 +14,8 @@ const HomepageSinglefeed = ({ posts }) => {
                         <div className='my-3 bg-white rounded p-4' key={index}>
                             <div className='flex items-center justify-between'>
                                 <div className='flex items-center'>
-                                    <a href='#'><img src="/user.jpg" alt="" className='rounded-full w-12 h-12' /></a>
+                                    {/* <a href='#'><img src="/user.jpg" alt="" className='rounded-full w-12 h-12' /></a> */}
+                                    <a href='#'><img src={post.user.avatar ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/${post.user.avatar}` : 'profile.jpg' } alt="" className='rounded-full w-12 h-12' /></a>
                                     <div className='ml-2 capitalize'>
                                         <a href='#'>
                                             <h6 className='leading-none p-0 m-0'> {post.user.name}</h6>

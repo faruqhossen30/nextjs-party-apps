@@ -6,13 +6,12 @@ import Router, { useRouter } from 'next/router'
 
 import HomePage from '@/components/HomePage/HomePage'
 import AppLayout from '@/components/Layouts/AppLayout'
-import UserContext from '@/contexts/Usercontext'
 
 export default function Home({posts}) {
     const { user } = useAuth({ middleware: 'guest' })
     const router = useRouter()
     return (
-        <UserContext.Provider value={user}>
+        <>
             {user ? (
                 <AppLayout>
                     <Head>
@@ -23,7 +22,7 @@ export default function Home({posts}) {
             ) : (
                 <>some</>
             )}
-        </UserContext.Provider>
+        </>
     )
 }
 
