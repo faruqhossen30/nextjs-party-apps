@@ -31,21 +31,20 @@ const designation =({ data, links })=> {
                                     </tr>
                                 </thead>
                                 <tbody>
-
                                 {
-                                        data.data.map((designation, index) => {
+                                        data.data.map((designations, index) => {
                                             return (
                                                 <tr key={index}>
-                                                    <th>{designation.id}</th>
-                                                    <td>{designation.title}</td>
-                                                    <td>{designation.status}</td>
-                                                    <td>{designation.user_id}</td>
+                                                    <th>{designations.id}</th>
+                                                    <td>{designations.title}</td>
+                                                    <td>{designations.status}</td>
+                                                    <td>{designations.user_id}</td>
                                                     <td>
                                                         <div className='flex'>
-                                                             <Link href={`/admin/designation/edit/${designation.id}`}>
+                                                             <Link href={`/admin/designations/edit/${designations.id}`}>
                                                                 <a><FaEdit className='text-green-600' /></a>
                                                             </Link>
-                                                            <button onClick={()=> handleDestroy(designation.id)}>
+                                                            <button>
                                                                 <a><FaTrashAlt className='text-rose-600'/></a>
                                                             </button>
                                                         </div>
@@ -54,14 +53,11 @@ const designation =({ data, links })=> {
                                             )
                                         })
                                     }
-
                                 </tbody>
                             </table>
                             <PaginationComponent links={links} data={data} />
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </AdminLayout>

@@ -69,4 +69,11 @@ const add_organization = () => {
     )
 }
 
+export async function getServerSideProps({ query }) {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_ADMIN_URL}/organization/edit/${query.id}`)
+    const data = res.data
+    return { props: { data } }
+}
+
+
 export default add_organization
