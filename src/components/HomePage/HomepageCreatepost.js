@@ -25,7 +25,7 @@ const HomepageCreatepost = () => {
             .post(`${process.env.NEXT_PUBLIC_API_URL}/post`, formData)
             .then(response => {
                 console.log(response);
-                // window.location.reload();
+                window.location.reload();
             })
 
     }
