@@ -22,7 +22,7 @@ const HomePage = ({posts}) => {
 
                     <HomepageSuggestiongroup />
                 </div>
-                <div className="col-span-12 md:col-span-6 px-1 py-2 pb-1 rounded">
+                <div className="col-span-12 md:col-span-6 px-2 py-2 pb-1 rounded">
                     <HomepageCreatepost />
 
                     <HomepageStory />

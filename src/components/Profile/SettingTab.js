@@ -1,3 +1,4 @@
+import axios from '@/lib/axios'
 import UserContext from '@/contexts/Usercontext'
 import React, { useContext, useState } from 'react'
 import Tab from 'react-bootstrap/Tab'
@@ -39,7 +40,7 @@ const SettingTab = () => {
         console.log(profile)
         axios
             .post(`${process.env.NEXT_PUBLIC_API_URL}/profile`, {
-                file:file
+                ...profile
             })
             .then(response => {
                 console.log(response);
@@ -50,7 +51,7 @@ const SettingTab = () => {
     return (
         <div className="container-fluid">
             {/* <p>{user.name && user.name}</p> */}
-            {/* <Tab.Container defaultActiveKey="profile_information">
+            <Tab.Container defaultActiveKey="profile_information">
                 <div className="bg-white rounded py-4 my-4">
                     <Row>
                         <Nav variant="pills" className="flex-column">
@@ -129,7 +130,7 @@ const SettingTab = () => {
                                             <Form.Control
                                                 type="text"
                                                 name='name'
-                                                value={user}
+                                                value={user.name}
                                                 onChange={e => setProfile({ ...profile, name: e.target.value })}
                                                 placeholder="Enter Your Name"
 
@@ -142,6 +143,8 @@ const SettingTab = () => {
                                             <Form.Control
                                                 type="email"
                                                 name='email'
+                                                disabled
+                                                value={user.email}
                                                 onChange={e => setProfile({ ...profile, email: e.target.value })}
                                                 placeholder="Email Address"
 
@@ -154,6 +157,7 @@ const SettingTab = () => {
                                             <Form.Control
                                                 type="text"
                                                 name='mobile'
+                                                value={user.mobile}
                                                 onChange={e => setProfile({ ...profile, mobile: e.target.value })}
                                                 placeholder="Enter Mobile"
 
@@ -860,7 +864,7 @@ const SettingTab = () => {
                         </Tab.Pane>
                     </Tab.Content>
                 </div>
-            </Tab.Container> */}
+            </Tab.Container>
         </div>
     )
 }
