@@ -1,8 +1,10 @@
-import React from 'react'
+import UserContext from '@/contexts/Usercontext'
+import React, { useContext } from 'react'
 
 import { FaHeart } from 'react-icons/fa'
 
 const HomepageProfile = () => {
+    const user = useContext(UserContext);
     return (
         <div>
             <div className='p-2 bg-white m-2 rounded'>
@@ -11,10 +13,10 @@ const HomepageProfile = () => {
                     <img className="w-full h-20 object-cover" src="https://images.pexels.com/photos/1274260/pexels-photo-1274260.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Flower and sky" />
 
                     <div className='relative -top-8'>
-                        <img src="/user.jpg" alt="" className='rounded w-24 h-24 relative l-0 r-0 m-auto' />
+                        <img src={user.avatar ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/${user.avatar}` : 'profile.jpg'} alt="" className='rounded w-24 h-24 relative l-0 r-0 m-auto' />
 
                         <div className='pt-3'>
-                            <h6 className='capitalize text-lg leading-none m-0'><strong>najmul hasan</strong></h6>
+                            <h6 className='capitalize text-lg leading-none m-0'><strong>{user.name}</strong></h6>
                             <h6 className='m-0'>Jessore</h6>
                         </div>
                     </div>
