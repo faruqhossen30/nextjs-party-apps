@@ -1,16 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Navnew from '@/components/Header/Navnew'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Breadcrumb from '@/components/BreadCrumb'
 import SettingTab from '@/components/Profile/SettingTab';
+import UserContext from '@/contexts/Usercontext';
 
 const settings = () => {
+    const user = useContext(UserContext)
     return (
-        <div>
-            <Navnew />
-            <Breadcrumb title="Profile Setting" />
-            <SettingTab />
-        </div>
+        <>
+            {user &&
+                <div>
+                    <Navnew />
+                    <Breadcrumb title="Profile Setting" />
+                    <SettingTab user={user} />
+                </div>
+            }
+        </>
     )
 }
 

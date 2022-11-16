@@ -1,12 +1,14 @@
-import React, { createRef, useEffect, useState } from 'react'
+import React, { createRef, useContext, useEffect, useState } from 'react'
 import { useAuth } from '@/hooks/auth'
 import { useDropzone } from 'react-dropzone'
 import Video from './Video'
 import axios from '@/lib/axios'
 import { FaImage, FaFileVideo, FaList } from 'react-icons/fa'
+import UserContext from '@/contexts/Usercontext'
 
 
 const HomepageCreatepost = () => {
+    const user = useContext(UserContext);
     // This is working single photo
     const textarea = createRef();
     const [photo, setPhoto] = useState();
@@ -20,6 +22,7 @@ const HomepageCreatepost = () => {
         const formData = new FormData();
         formData.append('body', textarea.current.value)
         formData.append('file', photo)
+        formData.append('user_id', user.id);
 
         await axios
             .post(`${process.env.NEXT_PUBLIC_API_URL}/post`, formData)

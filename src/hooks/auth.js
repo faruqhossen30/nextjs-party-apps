@@ -96,6 +96,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         }
 
         window.location.pathname = '/login'
+        // router.push('/login');
     }
 
     useEffect(() => {
