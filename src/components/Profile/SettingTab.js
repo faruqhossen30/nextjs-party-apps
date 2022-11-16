@@ -8,15 +8,42 @@ import Button from 'react-bootstrap/Button'
 import { Form } from 'react-bootstrap'
 
 const SettingTab = ({user}) => {
-    const[profile, setProfile]=useState(null);
+    const[profile, setProfile]=useState({
+        name: '',
+        email: '',
+        mobile: '',
+        dob: '',
+        gender: '',
+        occupation: '',
+        address: '',
+        relation_status: '',
+        blood: '',
+        website: '',
+        facebook: '',
+        youtube: '',
+        twitter: '',
+    });
     useEffect(()=>{
-        setProfile(user)
+        setProfile({
+            name: user.name,
+            email: user.email,
+            mobile: user.mobile,
+            dob: user.dob,
+            gender: user.gender,
+            occupation: user.occupation,
+            address: user.address,
+            relation_status: user.relation_status,
+            blood: user.blood,
+            website: user.website,
+            facebook: user.facebook,
+            youtube: user.youtube,
+            twitter: user.twitter,
+        })
     },[]);
 
-    const changeHandaller = (e)=>{
-        setProfile({'name': e.target.value});
-    }
+    // const inputChangeHandaller = (e)=> setProfile({...profile,[name]: e.target.value})
 
+    console.log(profile);
 
     async function profileUpdate(e) {
         e.preventDefault()
@@ -115,7 +142,7 @@ const SettingTab = ({user}) => {
                                                     type="text"
                                                     name='name'
                                                     value={profile.name}
-                                                    onChange={changeHandaller}
+                                                    onChange={(e)=> setProfile({...profile,name: e.target.value})}
                                                     placeholder="Enter Your Name"
 
                                                 />
@@ -128,6 +155,8 @@ const SettingTab = ({user}) => {
                                                     type="email"
                                                     name='email'
                                                     disabled
+                                                    value={profile.email}
+                                                    // onChange={changeHandaller}
                                                     placeholder="Email Address"
 
                                                 />
@@ -139,6 +168,8 @@ const SettingTab = ({user}) => {
                                                 <Form.Control
                                                     type="text"
                                                     name='mobile'
+                                                    value={profile.mobile}
+                                                    onChange={(e)=> setProfile({...profile,mobile: e.target.value})}
                                                     placeholder="Enter Mobile"
 
                                                 />
@@ -150,6 +181,8 @@ const SettingTab = ({user}) => {
                                                 <Form.Control
                                                     type="date"
                                                     name='dob'
+                                                    value={profile.dob}
+                                                    onChange={(e)=> setProfile({...profile,dob: e.target.value})}
 
                                                 />
                                             </Form.Group>
@@ -163,6 +196,8 @@ const SettingTab = ({user}) => {
 
                                                     className="form-control"
                                                     name='gender'
+                                                    value={profile.gender}
+                                                    onChange={(e)=> setProfile({...profile,gender: e.target.value})}
 
                                                 >
                                                     <option value="male">Male</option>
@@ -178,6 +213,8 @@ const SettingTab = ({user}) => {
                                                     type="text"
                                                     placeholder='Occupation'
                                                     name='occupation'
+                                                    value={profile.occupation}
+                                                    onChange={(e)=> setProfile({...profile,occupation: e.target.value})}
 
                                                 />
                                             </Form.Group>
@@ -189,6 +226,8 @@ const SettingTab = ({user}) => {
                                                 <Form.Control
                                                     name='address'
                                                     placeholder='Address'
+                                                    value={profile.Address}
+                                                    onChange={(e)=> setProfile({...profile,Address: e.target.value})}
                                                     as="textarea" rows={2} />
                                             </Form.Group>
                                             <Form.Group
@@ -199,6 +238,8 @@ const SettingTab = ({user}) => {
                                                 <select
                                                     name="relation_status"
                                                     className="form-control"
+                                                    value={profile.relation_status}
+                                                    onChange={(e)=> setProfile({...profile,relation_status: e.target.value})}
 
                                                 >
                                                     <option value="married">Married</option>
@@ -214,6 +255,8 @@ const SettingTab = ({user}) => {
                                                 <select
                                                     className="form-control"
                                                     name='blood'
+                                                    value={profile.blood}
+                                                    onChange={(e)=> setProfile({...profile,blood: e.target.value})}
 
                                                 >
                                                     <option value="a+">A+</option>
@@ -233,6 +276,8 @@ const SettingTab = ({user}) => {
                                                 <Form.Control
                                                     type="text"
                                                     name='website'
+                                                    value={profile.website}
+                                                    onChange={(e)=> setProfile({...profile,website: e.target.value})}
 
                                                     placeholder='Enter Your Website'
                                                 />
@@ -244,6 +289,8 @@ const SettingTab = ({user}) => {
                                                 <Form.Control
                                                     type="text"
                                                     name='facebook'
+                                                    value={profile.facebook}
+                                                    onChange={(e)=> setProfile({...profile,facebook: e.target.value})}
                                                     placeholder='Enter Your Facebook Link'
                                                 />
                                             </Form.Group>
@@ -253,8 +300,9 @@ const SettingTab = ({user}) => {
                                                 <Form.Label>Youtube</Form.Label>
                                                 <Form.Control
                                                     type="text"
-
                                                     name='youtube'
+                                                    value={profile.youtube}
+                                                    onChange={(e)=> setProfile({...profile,youtube: e.target.value})}
                                                     placeholder='Enter Your Youtube Link'
                                                 />
                                             </Form.Group>
@@ -265,7 +313,8 @@ const SettingTab = ({user}) => {
                                                 <Form.Control
                                                     type="text"
                                                     name='twitter'
-
+                                                    value={profile.twitter}
+                                                    onChange={(e)=> setProfile({...profile,twitter: e.target.value})}
                                                     placeholder='Enter Your Twitter Link'
                                                 />
                                             </Form.Group>
